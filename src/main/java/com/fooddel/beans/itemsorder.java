@@ -5,7 +5,7 @@ package com.fooddel.beans;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "itemsorder")
 public class itemsorder {
 
 

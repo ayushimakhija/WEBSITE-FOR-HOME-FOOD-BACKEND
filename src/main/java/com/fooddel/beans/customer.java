@@ -3,7 +3,7 @@ package com.fooddel.beans;
 import javax.persistence.*;
 import java.util.List;
 @Entity
-@Table
+@Table(name = "Customer")
 public class customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

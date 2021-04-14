@@ -3,7 +3,7 @@ package com.fooddel.beans;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "foodprovider")
 public class foodprovider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
