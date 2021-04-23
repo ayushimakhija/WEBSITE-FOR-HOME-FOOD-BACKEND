@@ -3,7 +3,7 @@ import javax.persistence.*;
 import java.util.List;
 @Entity
 @Table(name = "Customer")
-public class customer {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public String userId;
@@ -22,9 +22,9 @@ public class customer {
     public String password;
 
     //default constructor
-    public customer() {}
+    public Customer() {}
 
-    public customer(String firstName, String lastName, String contactNumber,
+    public Customer(String firstName, String lastName, String contactNumber,
                     String address, String emailId, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
