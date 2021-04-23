@@ -1,38 +1,105 @@
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: url("food.jpg") no-repeat fixed;
+    background-size: cover;
+    padding: 0 15px 0 15px;
+}
+nav {
+    height: 5%;
+    width: 100%;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a {
+    color: #ffffff;
+    font-size: 26px;
+    padding: 7px;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: pink;
+}
+.Welcome a{
+    color: whitesmoke;
+    text-decoration: none;
+
+}
+.Welcome a:hover {
+    background: none;
+    color:pink;
+    transition: .5s;
+}
+.Welcome .content{
+    position: absolute;
+    width: 30%;
+    padding: 15% 0 0 15%;
+    line-height: 30px;
+    margin-bottom: 5%;
+}
+label.logo {
+    color: whitesmoke;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+.Welcome .content .createAccount {
+    background-color: rgba(52, 52, 52, 0.2);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.Welcome .login{
+    width: 30%;
+    line-height: 10px;
+}
+.SignIn{
+    color: whitesmoke;
+    position: absolute;
+    text-align: center;
+    margin: 10% 10% 0% 60%;
+    font-size: 20px;
+    width: 20%;
+    padding: 2%;
+    line-height: 20px;
+    border-radius: 5%;
+    border: 1px -o-highlight-border solid ;
+    background-color: rgba(255, 255, 255,0.1);
+}
+.SignIn a{
+    color: lightpink;
+    text-decoration: none;
+}
+.SignIn a:hover{
+    color: lavenderblush;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+    background-color: rgba(222, 176, 176, 0.8);
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5% 30% 0 30%;
+    border-radius: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
