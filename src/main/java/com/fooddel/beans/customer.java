@@ -85,12 +85,7 @@ public class customer {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s']",
-                userId, firstName, lastName);
-    }
+
 
 }
 

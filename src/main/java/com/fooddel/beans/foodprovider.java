@@ -1,6 +1,7 @@
 package com.fooddel.beans;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "foodprovider")
@@ -16,17 +17,22 @@ public class foodprovider {
     private String emailId;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
+    private String location;
+    @OneToMany(mappedBy = "dishId")
+    private List<Menu> dishLists;
 
     //default constructor
     public foodprovider(){
 
     }
 
-    public foodprovider(String firstName, String lastName, String emailId, String password) {
+    public foodprovider(String firstName, String lastName, String emailId, String password,String location) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
         this.password = password;
+        this.location = location;
     }
 
     //getter and setter
@@ -56,6 +62,22 @@ public class foodprovider {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public List<Menu> getDishLists() {
+        return dishLists;
+    }
+
+    public void setDishLists(List<Menu> dishLists) {
+        this.dishLists = dishLists;
     }
 
     public void setPassword(String password) {
