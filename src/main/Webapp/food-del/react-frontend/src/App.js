@@ -4,6 +4,7 @@ import './App.css';
 import Welcome from "./component/Welcome"
 import Navbar from './component/Navbar'
 import SignIn from "./component/Signin";
+import SignUp from "./component/SignUp";
 
 
 
@@ -20,7 +21,7 @@ class App extends Component{
 
                 <Route exact path='/Welcome' component={Welcome}/>
                 <Route exact path='/Signin' component={SignIn}/>
-                <Route exact path='/Navbar' component={Navbar}/>
+                <Route exact path='/SignUp' component={SignUp}/>
               </Switch>
             </div>
           </Router>

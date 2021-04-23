@@ -1,7 +1,4 @@
 package com.fooddel.beans;
-
-
-
 import javax.persistence.*;
 
 @Entity

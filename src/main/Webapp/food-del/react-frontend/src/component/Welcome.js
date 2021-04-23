@@ -18,7 +18,7 @@ class Welcome extends Component {
             <div className="Welcome">
                 <div className="content">
                     <label className="logo">Home delivery </label>
-                    <h4>This is website for Students who lived away from there home and are always craving for home food </h4>
+                    <h4>This is website for Students who lives away from their home and are always craving for home food </h4>
                     {/*<div className="Button">*/}
                     {/*    <button className="createAccount" onSubmit={this.handleSubmit}>Create Account</button>*/}
                     {/*</div>*/}
