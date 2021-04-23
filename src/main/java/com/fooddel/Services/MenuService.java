@@ -19,7 +19,7 @@ public class MenuService {
     public Menu createMenu( Menu menu)
     {
         System.out.println(menu.toString());
-        return MenuRepository.save(menu);
+        return menuRepository.save(menu);
     }
 
     public ResponseEntity<Menu> updateMenu(Integer id, Menu menuDetails )

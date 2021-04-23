@@ -25,12 +25,12 @@ public class CustomerService {
     public Customer createCustomer(Customer customer)
     {
         System.out.println(customer.toString());
-        return CustomerRepository.save(customer);
+        return customerRepository.save(customer);
     }
 
     public Customer getCustomerById(Integer id){
 
-        Customer customer= CustomerRepository.findById(id).orElseThrow(()
+        Customer customer= customerRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("Customer not exists with id:"+id));
 
         return customer;  //entity is returned along with the status
@@ -52,9 +52,9 @@ public class CustomerService {
         Customer updatedCustomer= customerRepository.save(customer);
         return ResponseEntity.ok(updatedCustomer);
     }
-    public Customer getCustomerByEmail(String email){
+    public Customer getCustomerByEmail(String emailId){
 
-        Customer customer= customerRepository.findByEmail(email);
+        Customer customer= customerRepository.findByEmail(emailId);
 
         return customer;  //entity is returned along with the status
     }

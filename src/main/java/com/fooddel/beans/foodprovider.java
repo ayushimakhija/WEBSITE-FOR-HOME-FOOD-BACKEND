@@ -27,12 +27,13 @@ public class foodprovider {
 
     }
 
-    public foodprovider(String firstName, String lastName, String emailId, String password,String location) {
+    public foodprovider(String firstName, String lastName, String emailId, String password, String location, List<Menu> dishLists) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
         this.password = password;
         this.location = location;
+        this.dishLists = dishLists;
     }
 
     //getter and setter
