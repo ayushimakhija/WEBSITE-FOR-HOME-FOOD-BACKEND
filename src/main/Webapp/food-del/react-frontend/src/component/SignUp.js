@@ -13,7 +13,7 @@ class SignUp extends Component {
             contactNumber: "",
             password: "",
             address: "",
-            foodDeliver:"No"
+            foodDeliver:"yes"
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveUser = this.saveUser.bind(this);
@@ -62,7 +62,7 @@ class SignUp extends Component {
                             <option value="Yes">Yes</option>
                         </select>
                         <br/><br/>
-                        <div style={{display: this.state.isfoodDeliver === "Yes" ? "block" : "none"}}>
+                        <div>
                             {/*<h2 className="name">Company Name</h2>*/}
                             <input
                                 type="text"
@@ -86,6 +86,7 @@ class SignUp extends Component {
                                 value={this.state.firstName}
                                 onChange={this.handleChange}
                             />
+                            <br/>
                             {/*<br/>*/}
                             {/*<label className="lastLabel">Last Name: </label>*/}
                             <input
@@ -107,6 +108,7 @@ class SignUp extends Component {
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
+                    <br/>
                         {/*<br/>*/}
                         {/*<h2 className="name">Phone</h2>*/}
                         <input
@@ -118,6 +120,7 @@ class SignUp extends Component {
                             value={this.state.contactNumber}
                             onChange={this.handleChange}
                         />
+                        <br/>
                         {/*<br/>*/}
                         {/*<h2 className="name">Password</h2>*/}
                         <input

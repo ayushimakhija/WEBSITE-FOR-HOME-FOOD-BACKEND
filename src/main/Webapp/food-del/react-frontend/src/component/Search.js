@@ -20,7 +20,14 @@ class Search extends Component{
         return (
             <div className="Search">
                 <form>
-                    <input type = 'text' name = 'search' value = {this.state.Search} onChange = {this.handleOnChange}/> <br></br>
+                    <input
+                    type="text"
+                    name="Search"
+                    className="Search"
+                    placeholder="Search"
+                    value={this.state.Search}
+                    onChange={this.handleOnChange}/>
+                    <br></br>
                     <button>Search</button>
                 </form>
             </div>

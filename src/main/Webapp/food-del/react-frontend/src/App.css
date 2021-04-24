@@ -22,13 +22,13 @@ nav ul li {
     margin: 0 5px;
 }
 nav ul li a {
-    color: #ffffff;
+    color: Black;
     font-size: 26px;
     padding: 7px;
     text-decoration: none;
 }
 nav ul li a:hover{
-    color: pink;
+    color: Red;
 }
 .Welcome a{
     color: whitesmoke;
@@ -49,10 +49,11 @@ nav ul li a:hover{
 }
 
 label.logo {
-    color: whitesmoke;
+    color: Black;
+    margin: 10% 20% 10% -20%;
     font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
+    line-height: 60px;
+    padding: 0 70px;
     font-weight: bold;
 }
 .Welcome .content .createAccount {
@@ -71,20 +72,20 @@ label.logo {
     line-height: 10px;
 }
 .Search{
-    color: whitesmoke;
+    color: black;
     position: center;
     text-align: center;
-    margin: 10% 10% 10% 30%;
+    margin: 10% 10% 10% 20%;
     font-size: 20px;
-    width: 30%;
-    padding: 2%;
-    line-height: 30px;
-    border-radius: 5%;
+    width: 45%;
+    padding: 0%;
+    line-height: 20px;
+    border-radius: 15%;
     border: 1px -o-highlight-border solid ;
-    background-color: rgba(255, 255, 255,0.1);
+    background-color: rgba(255, 0, 0,0.1);
 }
 .SignIn{
-    color: whitesmoke;
+    color: Black;
     position: absolute;
     text-align: center;
     margin: 10% 10% 0% 60%;
@@ -94,7 +95,7 @@ label.logo {
     line-height: 20px;
     border-radius: 5%;
     border: 1px -o-highlight-border solid ;
-    background-color: rgba(255, 255, 255,0.1);
+    background-color: rgba(255, 0, 0,0.1);
 }
 .SignIn a{
     color: lightpink;
@@ -105,7 +106,7 @@ label.logo {
 }
 
 button {
-    background-color: rgba(222, 176, 176, 0.8);
+    background-color: rgba(255, 0, 0, 0.8);
     border: none;
     color: white;
     padding: 10px 32px;
