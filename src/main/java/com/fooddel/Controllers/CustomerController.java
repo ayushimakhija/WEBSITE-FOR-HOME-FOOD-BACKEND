@@ -39,7 +39,7 @@ public class CustomerController {
     }
 
 
-    @GetMapping("/user/{id}")
+    @GetMapping("Customer/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable Integer id) {
         Customer customer = customerService.getCustomerById(id);
         if(customer!=null) {
@@ -48,7 +48,7 @@ public class CustomerController {
         return null;
     }
 
-    @PutMapping("user/{id}")
+    @PutMapping("Customer/{id}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
         return customerService.updateCustomer(id, customer);
     }

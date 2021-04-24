@@ -16,6 +16,8 @@ public class Menu {
     public String dishImage;
     @Column(nullable = false)
     public String dishPrice;
+    @Column(nullable=false)
+    public String day;
 
     @ManyToOne
     @JoinColumn(name = "dishId")
@@ -24,11 +26,28 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(String dishName, String dishDescription, String dishImage, String dishPrice) {
+    public Menu(String dishName, String dishDescription, String dishImage, String dishPrice,String day) {
         this.dishName = dishName;
         this.dishDescription = dishDescription;
         this.dishImage = dishImage;
         this.dishPrice = dishPrice;
+        this.day = day;
+    }
+
+    public foodprovider getDishId() {
+        return dishId;
+    }
+
+    public void setDishId(foodprovider dishId) {
+        this.dishId = dishId;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getDishName() {

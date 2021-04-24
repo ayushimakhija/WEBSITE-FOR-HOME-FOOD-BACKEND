@@ -1,10 +1,6 @@
 package com.fooddel.Controllers;
-
-import com.fooddel.Services.CustomerService;
 import com.fooddel.Services.MenuService;
-import com.fooddel.beans.Customer;
 import com.fooddel.beans.Menu;
-import com.fooddel.repository.CustomerRepository;
 import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +15,7 @@ public class MenuController {
     private MenuService menuService;
 
 
-    @PostMapping("/Menu")
+    @PostMapping("/menu")
     public Menu createMenu(@RequestBody Menu menu)
     {
         return menuService.createMenu(menu);

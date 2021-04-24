@@ -27,7 +27,6 @@ class Search extends Component{
                     placeholder="Search"
                     value={this.state.Search}
                     onChange={this.handleOnChange}/>
-                    <br></br>
                     <button>Search</button>
                 </form>
             </div>

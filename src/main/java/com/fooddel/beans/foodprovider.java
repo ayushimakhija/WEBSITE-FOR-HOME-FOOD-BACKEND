@@ -10,15 +10,13 @@ public class foodprovider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  String foodProviderId;
     @Column(nullable = false)
-    private String firstName;
-    @Column(nullable = false)
-    private String lastName;
-    @Column(nullable = false)
     private String emailId;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
     private String location;
+    @Column(nullable=false)
+    private String contactNumber;
     @OneToMany(mappedBy = "dishId")
     private List<Menu> dishLists;
 
@@ -27,30 +25,23 @@ public class foodprovider {
 
     }
 
-    public foodprovider(String firstName, String lastName, String emailId, String password, String location, List<Menu> dishLists) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public foodprovider(String emailId, String password, String location,String contactNumber) {
         this.emailId = emailId;
         this.password = password;
         this.location = location;
-        this.dishLists = dishLists;
+        this.contactNumber= contactNumber;
+
     }
 
     //getter and setter
-    public String getFirstName() {
-        return firstName;
+
+
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     public String getEmailId() {

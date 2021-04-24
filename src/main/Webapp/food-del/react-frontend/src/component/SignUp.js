@@ -13,7 +13,7 @@ class SignUp extends Component {
             contactNumber: "",
             password: "",
             address: "",
-            foodDeliver:"yes"
+            foodDeliver:"No"
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveUser = this.saveUser.bind(this);

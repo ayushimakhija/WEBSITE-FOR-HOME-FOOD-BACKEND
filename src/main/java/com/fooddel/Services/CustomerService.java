@@ -56,7 +56,7 @@ public class CustomerService {
 
         Customer customer= customerRepository.findByEmail(emailId);
 
-        return customer;  //entity is returned along with the status
+        return customer;
     }
 
 

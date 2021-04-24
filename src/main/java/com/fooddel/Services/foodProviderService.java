@@ -1,5 +1,6 @@
 package com.fooddel.Services;
 
+import com.fooddel.beans.Customer;
 import com.fooddel.beans.foodprovider;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.FoodProviderRepository;
@@ -42,8 +43,6 @@ public class foodProviderService {
         foodprovider foodp= foodproviderRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("food provider does not exists with id:"+id));
 
-        fp.setFirstName(fp.getFirstName());
-        fp.setLastName(fp.getLastName());
         fp.setEmailId(fp.getEmailId());
         fp.setLocation(fp.getLocation());
         fp.setPassword(fp.getPassword());
@@ -60,5 +59,12 @@ public class foodProviderService {
 
         return fp;
     }
+    public List<foodprovider> getFoodProvidersByLocation(String location){
+
+        List<foodprovider> fp= foodproviderRepository.findByLocation(location);
+
+        return fp;
+    }
+
 
 }

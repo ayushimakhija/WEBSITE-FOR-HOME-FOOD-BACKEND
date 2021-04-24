@@ -1,5 +1,4 @@
 package com.fooddel.Services;
-import com.fooddel.beans.Customer;
 import com.fooddel.beans.Menu;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.MenuRepository;
@@ -31,6 +30,7 @@ public class MenuService {
         menu.setDishImage(menu.getDishImage());
         menu.setDishPrice(menu.getDishPrice());
         menu.setDishDescription(menu.getDishDescription());
+        menu.setDay(menu.getDay());
 
 
 

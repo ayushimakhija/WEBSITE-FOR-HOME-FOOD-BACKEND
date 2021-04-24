@@ -11,7 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("api/v1/")
 public class foodProviderController {
     @Autowired
     private FoodProviderRepository foodproviderRepository;
@@ -49,7 +50,14 @@ public class foodProviderController {
         return null;
     }
 
-    @PutMapping("user/{id}")
+    @GetMapping("/foodprovider/{location}")
+    public List<foodprovider> getFoodProvidersByLocation(@PathVariable String location) {
+        return foodproviderService.getFoodProvidersByLocation(location);
+    }
+
+
+
+    @PutMapping("foodprovider/{id}")
     public ResponseEntity<foodprovider> updateFoodProvider(@PathVariable Integer id, @RequestBody foodprovider fp) {
         return foodproviderService.updateFoodProvider(id, fp);
     }
