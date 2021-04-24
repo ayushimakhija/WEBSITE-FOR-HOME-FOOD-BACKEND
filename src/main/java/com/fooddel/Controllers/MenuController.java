@@ -5,14 +5,16 @@ import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin("*")
+@RestController
+@RequestMapping("/api/")
 public class MenuController {
 
     @Autowired
     private MenuRepository menuRepository;
 
-     @Autowired
-    private MenuService menuService;
+
+     private MenuService menuService;
 
 
     @PostMapping("/menu")

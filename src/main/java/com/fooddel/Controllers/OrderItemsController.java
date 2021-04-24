@@ -9,12 +9,13 @@ import com.fooddel.repository.OrdersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin("*")
+@RestController
+@RequestMapping("/api/")
 public class OrderItemsController {
     @Autowired
     private OrdersItemRepository orderitemsRepository;
 
-    @Autowired
     private OrdersItemsService orderItemsService;
 
 

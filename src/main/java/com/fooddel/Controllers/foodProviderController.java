@@ -4,6 +4,7 @@ import com.fooddel.Services.CustomerService;
 import com.fooddel.Services.foodProviderService;
 import com.fooddel.beans.Customer;
 import com.fooddel.beans.foodprovider;
+import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.CustomerRepository;
 import com.fooddel.repository.FoodProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,58 +12,49 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin("*")
 @RestController
-@RequestMapping("api/v1/")
+@RequestMapping("api")
 public class foodProviderController {
     @Autowired
     private FoodProviderRepository foodproviderRepository;
 
     private foodProviderService foodproviderService;
 
-
-
-    @GetMapping("/foodprovider")
-    public List<foodprovider> getAllFoodProvider(){
-        return foodproviderRepository.findAll();
-    }
-
-
-
     @GetMapping("/foodprovider")
     public List<foodprovider> getfoodProviders() {
-        return foodproviderService.getfoodProviders();
+        return foodproviderRepository.findAll();
     }
 
 
     @PostMapping("/foodprovider")
     public foodprovider createFoodProvider(@RequestBody foodprovider fp)  //mapping the JSON Body tot he object directly
     {
-        return foodproviderService.createFoodProvider(fp);
+        return foodproviderRepository.save(fp);
     }
 
 
-    @GetMapping("/foodprovider/{id}")
-    public ResponseEntity<foodprovider> getFoodProviderById(@PathVariable Integer id) {
-        foodprovider fp = foodproviderService.getFoodProviderById(id);
-        if(fp!=null) {
-            return ResponseEntity.ok(fp);
-        }
-        return null;
-    }
+   /* @GetMapping("/foodprovider/{id}")
+    public ResponseEntity<foodprovider> getFoodProviderById(@PathVariable(value="id") Integer Id) throws ResourceNotFoundException {
+            foodprovider fp =
+                    foodproviderRepository.findById(Id).orElseThrow(() -> new ResourceNotFoundException("customer not found on :: " + Id));
+            return ResponseEntity.ok().body(fp);
+    }*/
 
     @GetMapping("/foodprovider/{location}")
-    public List<foodprovider> getFoodProvidersByLocation(@PathVariable String location) {
-        return foodproviderService.getFoodProvidersByLocation(location);
+    public ResponseEntity<foodprovider> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
+        List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
+        for(int i=0; i < list.size();i++){
+            System.out.println(list.get(i));
+        }
+        return (ResponseEntity<foodprovider>) (list);
     }
 
 
 
-    @PutMapping("foodprovider/{id}")
-    public ResponseEntity<foodprovider> updateFoodProvider(@PathVariable Integer id, @RequestBody foodprovider fp) {
-        return foodproviderService.updateFoodProvider(id, fp);
-    }
 
-    @PostMapping("/login")
+
+    /*@PostMapping("/login")
     public ResponseEntity<foodprovider> login(@RequestBody foodprovider fp){
         String email = fp.getEmailId();
         String pass = fp.getPassword();
@@ -77,5 +69,5 @@ public class foodProviderController {
         }
 
         return null;
-    }
+    }*/
 }

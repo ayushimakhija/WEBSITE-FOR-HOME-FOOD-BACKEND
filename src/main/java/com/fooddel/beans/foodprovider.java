@@ -8,7 +8,7 @@ import java.util.List;
 public class foodprovider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  String foodProviderId;
+    private  Integer Id;
     @Column(nullable = false)
     private String emailId;
     @Column(nullable = false)

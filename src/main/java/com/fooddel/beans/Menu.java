@@ -6,7 +6,7 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String Id;
+    public Integer Id;
 
     @Column(nullable = false)
     public String dishName;

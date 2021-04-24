@@ -1,11 +1,13 @@
 package com.fooddel.beans;
 
 import javax.persistence.*;
-
+@Entity
+@Table(name="Orderitems")
 public class Orderitems {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String orderItemId;
+    public Integer orderItemId;
     @Column(nullable = false)
     public String orderIteamName;
     @Column(nullable = false)
@@ -17,7 +19,7 @@ public class Orderitems {
     public Orderitems(String orderIteamName, float orderItemPrice, Orders orderId) {
         this.orderIteamName = orderIteamName;
         this.orderItemPrice = orderItemPrice;
-        this.orderId = orderId;
+
     }
 
     public Orderitems() {

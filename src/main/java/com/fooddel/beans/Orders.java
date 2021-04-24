@@ -1,19 +1,19 @@
 package com.fooddel.beans;
 import javax.persistence.*;
 import java.util.List;
-
+@Entity
 @Table(name="orders")
 public class Orders {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String Id;
+    public Integer Id;
     @Column(nullable = false)
     public int totalprice;
     @OneToMany(mappedBy = "orderId")
     private List<Orderitems> orderItemList;
 
-    public Orders(int totalprice, List<Orderitems> orderItemList) {
+    public Orders(int totalprice) {
         this.totalprice = totalprice;
-        this.orderItemList = orderItemList;
     }
 
     public Orders() {

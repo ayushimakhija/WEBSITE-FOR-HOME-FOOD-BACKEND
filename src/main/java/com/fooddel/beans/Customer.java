@@ -6,7 +6,7 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String userId;
+    public Integer Id;
 
     @Column(nullable = false)
     public String firstName;

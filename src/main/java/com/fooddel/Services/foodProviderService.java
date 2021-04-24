@@ -38,7 +38,7 @@ public class foodProviderService {
         return fp;
     }
 
-    public ResponseEntity<foodprovider> updateFoodProvider(Integer id, foodprovider fp)
+    public foodprovider updateFoodProvider(Integer id, foodprovider fp)
     {
         foodprovider foodp= foodproviderRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("food provider does not exists with id:"+id));
@@ -51,7 +51,7 @@ public class foodProviderService {
 
 
         foodprovider updatedFoodProvider= foodproviderRepository.save(fp);
-        return ResponseEntity.ok(updatedFoodProvider);
+        return updatedFoodProvider;
     }
     public foodprovider getFoodProviderByEmail(String emailId){
 
