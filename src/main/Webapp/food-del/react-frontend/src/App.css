@@ -47,6 +47,7 @@ nav ul li a:hover{
     line-height: 30px;
     margin-bottom: 5%;
 }
+
 label.logo {
     color: whitesmoke;
     font-size: 35px;
@@ -68,6 +69,19 @@ label.logo {
 .Welcome .login{
     width: 30%;
     line-height: 10px;
+}
+.Search{
+    color: whitesmoke;
+    position: center;
+    text-align: center;
+    margin: 10% 10% 10% 30%;
+    font-size: 20px;
+    width: 30%;
+    padding: 2%;
+    line-height: 30px;
+    border-radius: 5%;
+    border: 1px -o-highlight-border solid ;
+    background-color: rgba(255, 255, 255,0.1);
 }
 .SignIn{
     color: whitesmoke;
