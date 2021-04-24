@@ -14,7 +14,7 @@ public interface FoodProviderRepository extends JpaRepository<foodprovider,Integ
     @Query(value = "SELECT * FROM foodprovider fp WHERE fp.emailId =:emailId", nativeQuery = true)
     public foodprovider findByEmailId(@Param("emailId") String emailId);
 
-    @Query(value = "SELECT * FROM foodprovider fp WHERE fp.location like %:location%" , nativeQuery = true)
+    @Query(value = "SELECT * FROM foodprovider fp WHERE fp.location like :%location%" , nativeQuery = true)
     public List<foodprovider> findByLocation(@Param("location") String location);
 }
 

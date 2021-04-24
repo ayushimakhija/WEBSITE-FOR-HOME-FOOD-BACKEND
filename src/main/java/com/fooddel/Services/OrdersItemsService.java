@@ -19,7 +19,7 @@ public class OrdersItemsService {
 
 
 
-    public ResponseEntity<Orderitems> updateOrderItems(Integer id, Orderitems orderitemsDeatials )
+    public Orderitems updateOrderItems(Integer id, Orderitems orderitemsDeatials )
     {
         Orderitems orderitem = ordersitemsRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("dish not exists with id:"+id));
@@ -30,7 +30,7 @@ public class OrdersItemsService {
 
 
         Orderitems updatedordersitem = ordersitemsRepository.save(orderitemsDeatials);
-        return ResponseEntity.ok(updatedordersitem);
+        return updatedordersitem;
     }
 
 }

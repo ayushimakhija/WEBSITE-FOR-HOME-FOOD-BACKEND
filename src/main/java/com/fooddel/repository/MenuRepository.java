@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface MenuRepository extends JpaRepository<Menu,Integer > {
 
-    @Query(value = "SELECT * FROM Menu m WHERE m.dishName like %:dishName%", nativeQuery = true)
-    public Menu findByDishName(@Param("dishName") String dishName);
+    @Query(value = "SELECT * FROM Menu m WHERE m.dishName like :%dishName%", nativeQuery = true)
+    public List <Menu> findByDishName(@Param("dishName") String dishName);
 
     @Query(value = "SELECT * FROM Menu b WHERE b.dishId like %:dishId%", nativeQuery = true)
     public List<Menu> findByDishId(@Param("dishId") String dishId);

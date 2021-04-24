@@ -3,6 +3,7 @@ package com.fooddel.Controllers;
 import com.fooddel.Services.CustomerService;
 import com.fooddel.Services.foodProviderService;
 import com.fooddel.beans.Customer;
+import com.fooddel.beans.Menu;
 import com.fooddel.beans.foodprovider;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.CustomerRepository;
@@ -42,15 +43,19 @@ public class foodProviderController {
     }*/
 
     @GetMapping("/foodprovider/{location}")
-    public ResponseEntity<foodprovider> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
+    public ResponseEntity<List<foodprovider>> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
         List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
         for(int i=0; i < list.size();i++){
             System.out.println(list.get(i));
         }
-        return (ResponseEntity<foodprovider>) (list);
+        return ResponseEntity.ok(list);
     }
 
-
+    @PutMapping("foodpovider/{id}")
+    public ResponseEntity<foodprovider> updateFoodProvider(@PathVariable Integer Id, @RequestBody foodprovider fp) {
+        fp = foodproviderService.updateFoodProvider(Id, fp);
+        return ResponseEntity.ok(fp);
+    }
 
 
 

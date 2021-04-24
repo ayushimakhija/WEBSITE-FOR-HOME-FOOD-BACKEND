@@ -5,9 +5,12 @@ import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("api")
 public class MenuController {
 
     @Autowired
@@ -25,8 +28,8 @@ public class MenuController {
 
 
     @GetMapping("/menu/{dishName}")
-    public ResponseEntity<Menu> getMenuByDishName(@PathVariable String dishName) {
-        Menu menu = menuService.getMenuByDishName(dishName);
+    public ResponseEntity<List<Menu>> getMenuByDishName(@PathVariable String dishName) {
+        List<Menu> menu = menuService.getMenuByDishName(dishName);
         if(menu!=null) {
             return ResponseEntity.ok(menu);
         }
@@ -35,6 +38,7 @@ public class MenuController {
 
     @PutMapping("menu/{id}")
     public ResponseEntity<Menu> updateMenu(@PathVariable Integer id, @RequestBody Menu menu) {
-        return menuService.updateMenu(id, menu);
+         menu= menuService.updateMenu(id, menu);
+        return ResponseEntity.ok(menu);
     }
 }

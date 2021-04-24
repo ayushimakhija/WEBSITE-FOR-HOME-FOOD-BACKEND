@@ -5,6 +5,8 @@ import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public class MenuService {
 
     private final MenuRepository menuRepository;
@@ -21,7 +23,7 @@ public class MenuService {
         return menuRepository.save(menu);
     }
 
-    public ResponseEntity<Menu> updateMenu(Integer id, Menu menuDetails )
+    public Menu updateMenu(Integer id, Menu menuDetails )
     {
         Menu menu = menuRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("dish not exists with id:"+id));
@@ -35,11 +37,11 @@ public class MenuService {
 
 
         Menu updatedmenu = menuRepository.save(menu);
-        return ResponseEntity.ok(updatedmenu);
+        return updatedmenu;
     }
-    public Menu getMenuByDishName(String dishName){
+    public List<Menu> getMenuByDishName(String dishName){
 
-        Menu menu= menuRepository.findByDishName(dishName);
+        List<Menu> menu= menuRepository.findByDishName(dishName);
 
         return menu;  //entity is returned along with the status
     }

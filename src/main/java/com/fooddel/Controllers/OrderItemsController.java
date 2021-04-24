@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("api")
 public class OrderItemsController {
     @Autowired
     private OrdersItemRepository orderitemsRepository;
@@ -21,6 +21,7 @@ public class OrderItemsController {
 
     @PutMapping("Orderitems/{id}")
     public ResponseEntity<Orderitems> updateOrderItems(@PathVariable Integer id, @RequestBody Orderitems op) {
-        return orderItemsService.updateOrderItems(id, op);
+        op= orderItemsService.updateOrderItems(id, op);
+        return ResponseEntity.ok(op);
     }
 }
