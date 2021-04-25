@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+
 @RestController
 @RequestMapping("api")
 public class MenuController {
@@ -29,10 +29,10 @@ public class MenuController {
 
     @GetMapping("/menu/{dishName}")
     public ResponseEntity<List<Menu>> getMenuByDishName(@PathVariable String dishName) {
-        List<Menu> menu = menuService.getMenuByDishName(dishName);
-        if(menu!=null) {
-            return ResponseEntity.ok(menu);
-        }
+       // List<Menu> menu = menuService.getMenuByDishName(dishName);
+        //if(menu!=null) {
+           // return ResponseEntity.ok(menu);
+       // }
         return null;
     }
 

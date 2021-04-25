@@ -23,9 +23,10 @@ class FoodProviderMenu extends Component{
     render(){
         const { foodproviderMenu } = this.state
         return(
-            <div>List of Food Provider{
+            <div>List of dishs available{
                 foodproviderMenu.length?
-                    foodproviderMenu.map(dish=><div key={dish.id}>{dish.title}</div>):null
+                    foodproviderMenu.map(dish=><div key={dish.id}>{dish.title}
+                    <button>Subscribe</button></div>):null
             }</div>
         )
     }

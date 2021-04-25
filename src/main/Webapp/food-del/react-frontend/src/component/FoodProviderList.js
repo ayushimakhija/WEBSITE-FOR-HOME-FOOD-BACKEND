@@ -2,7 +2,7 @@ import React from 'react';
 import {Component} from 'react';
 import axios from 'axios';
 
-class FoodProviderList extends Component{
+class FoodProviderList extends Component {
    constructor(props) {
        super(props);
        this.state = {
@@ -25,7 +25,8 @@ class FoodProviderList extends Component{
        return(
            <div>List of Food Provider{
                foodproviderList.length?
-               foodproviderList.map(foodprovider=><div key={foodprovider.id}>{foodprovider.title}</div>):null
+               foodproviderList.map(foodprovider=><div key={foodprovider.id}>{foodprovider.title}
+               <button>Select</button></div>):null
            }</div>
        )
    }
