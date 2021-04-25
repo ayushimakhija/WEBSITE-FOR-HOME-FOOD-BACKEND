@@ -11,11 +11,11 @@ class FoodProviderPage extends Component{
     }
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response=>{
-                this.setState({foodproviderMenu:response.data})
+            .then(response => {
+                this.setState({foodproviderMenu: response.data})
                 console.log(response);
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
             })
     }
