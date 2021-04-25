@@ -1,17 +1,19 @@
 import React from 'react';
 import {Component} from 'react';
+import {Link} from 'react-router-dom'
 
 
 class Search extends Component{
     constructor(props){
         super(props);
         this.state = {
-            Search: 'search for a location',
+            Search: '',
         }
     }
 
     handleOnChange = (e) =>{
-        this.setState({[e.target.name]:e.target.value})
+        <Link to="/FoodProviderList">something</Link>
+        //this.setState({[e.target.name]:e.target.value})
     }
 
 

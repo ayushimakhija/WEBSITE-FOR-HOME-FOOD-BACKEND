@@ -6,6 +6,7 @@ import Navbar from './component/Navbar'
 import SignIn from "./component/Signin";
 import SignUp from "./component/SignUp";
 import Search from "./component/Search";
+import FoodProviderList from "./component/FoodProviderList";
 
 
 
@@ -25,6 +26,7 @@ class App extends Component{
                 <Route exact path='/Signin' component={SignIn}/>
                 <Route exact path='/SignUp' component={SignUp}/>
                 <Route exact path='/Search' component={Search}/>
+                <Route exact path='/FoodProviderList' component={FoodProviderList}/>
               </Switch>
             </div>
           </Router>

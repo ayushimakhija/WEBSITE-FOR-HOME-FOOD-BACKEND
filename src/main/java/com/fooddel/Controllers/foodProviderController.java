@@ -45,9 +45,6 @@ public class foodProviderController {
     @GetMapping("/foodprovider/{location}")
     public ResponseEntity<List<foodprovider>> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
         List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
-        for(int i=0; i < list.size();i++){
-            System.out.println(list.get(i));
-        }
         return ResponseEntity.ok(list);
     }
 
