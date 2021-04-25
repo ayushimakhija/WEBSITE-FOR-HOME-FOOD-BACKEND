@@ -23,7 +23,7 @@ class FoodProviderPage extends Component{
     render(){
         const { foodproviderMenu } = this.state
         return(
-            <div>List of dishs available{
+            <div className='FPP'><h1>List of dishs available</h1>{
                 foodproviderMenu.length?
                     foodproviderMenu.map(dish=><div key={dish.id}>{dish.title}
                         <button>Update</button>

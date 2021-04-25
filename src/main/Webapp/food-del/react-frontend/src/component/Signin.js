@@ -27,7 +27,6 @@ class SignIn extends Component{
                 </div>
                 <div className="main">
                     <form>
-                        {/*<h4 className="name">Email Address</h4>*/}
                         <input
                             type="email"
                             name="email"
@@ -38,7 +37,7 @@ class SignIn extends Component{
                             onChange={this.handleChange}
                         />
                         <br/>
-                        {/*<h4 className="name">Password</h4>*/}
+
                         <input
                             type="password"
                             name="password"

@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {Link} from "react-router-dom";
+import customerService from "../Services/customerService";
 
 
 class SignUp extends Component {
@@ -16,7 +17,7 @@ class SignUp extends Component {
             foodDeliver:"No"
         }
         this.handleChange = this.handleChange.bind(this)
-        this.saveUser = this.saveUser.bind(this);
+        this.saveUser = this.saveCustomer.bind(this);
     }
 
     handleChange(event) {
@@ -26,19 +27,19 @@ class SignUp extends Component {
         })
     }
 
-    saveUser = (e) => {
+    saveCustomer = (e) => {
         e.preventDefault();
-        let user = {
+        let customer = {
             firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email,
             contactNumber: this.state.contactNumber, password: this.state.password, address: this.state.address,
             foodDeliverFlag: this.state.isfoodDeliver === "Yes"
         }
 
-        console.log('User =>' + JSON.stringify(user));
+        console.log('User =>' + JSON.stringify(customer));
 
-        /*UserService.createUser(user).then(res => {
+        customerService.createCustomer(customer).then(res => {
             this.props.history.push('/Signin');
-        });*/
+        });
     }
 
     render() {
@@ -133,7 +134,7 @@ class SignUp extends Component {
                             onChange={this.handleChange}
                         />
                         <br/><br/>
-                        <button className="registerButton" onClick={this.saveUser}>Register</button>
+                        <button className="registerButton" onClick={this.saveCustomer}>Register</button>
                     </form>
                 </div>
             </div>

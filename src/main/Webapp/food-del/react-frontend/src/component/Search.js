@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import {Link} from 'react-router-dom'
+import foodproviderService from '../Services/foodproviderService'
 
 
 class Search extends Component{
@@ -9,13 +10,42 @@ class Search extends Component{
         this.state = {
             Search: '',
         }
+        this.handleOnChange= this.handleOnChange.bind(this);
+        this.handleClick= this.handleClick.bind(this);
     }
 
-    handleOnChange = (e) =>{
-        <Link to="/FoodProviderList">something</Link>
-        //this.setState({[e.target.name]:e.target.value})
-    }
+    handleOnChange = (event) => {
+            const {name, value} = event.target
+            this.setState({
+                [name]: value
+            })
+        }
 
+    handleClick(e){
+        e.preventDefault();
+
+        let location = {
+            search: this.state.search
+        }
+        console.log("HandleClick")
+        console.log(location);
+        foodproviderService.getAllFoodproviderByLocation(location).then(res => {
+
+
+            console.log("list of food provider", res.data);
+            this.props.history.push({
+                pathname: "/FoodProviderList",
+
+            })
+            console.log("Search Successfull");
+        })
+            .catch(err =>{
+                console.log(err.response.data);
+                alert("No such location");
+                window.location.reload(true);
+            });
+
+    }
 
     render(){
 
@@ -29,7 +59,7 @@ class Search extends Component{
                     placeholder="Search"
                     value={this.state.Search}
                     onChange={this.handleOnChange}/>
-                    <button>Search</button>
+                    <button className="Search" onClick={this.handleClick}>Search</button>
                 </form>
             </div>
         );

@@ -22,25 +22,18 @@ public class foodProviderController {
 
     private foodProviderService foodproviderService;
 
-    @GetMapping("/foodprovider")
+    @GetMapping("/getAllFoodprovider")
     public List<foodprovider> getfoodProviders() {
         return foodproviderRepository.findAll();
     }
 
 
-    @PostMapping("/foodprovider")
+    @PostMapping("/createfoodprovider")
     public foodprovider createFoodProvider(@RequestBody foodprovider fp)  //mapping the JSON Body tot he object directly
     {
         return foodproviderRepository.save(fp);
     }
 
-
-   /* @GetMapping("/foodprovider/{id}")
-    public ResponseEntity<foodprovider> getFoodProviderById(@PathVariable(value="id") Integer Id) throws ResourceNotFoundException {
-            foodprovider fp =
-                    foodproviderRepository.findById(Id).orElseThrow(() -> new ResourceNotFoundException("customer not found on :: " + Id));
-            return ResponseEntity.ok().body(fp);
-    }*/
 
     @GetMapping("/foodprovider/{location}")
     public ResponseEntity<List<foodprovider>> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
@@ -48,7 +41,7 @@ public class foodProviderController {
         return ResponseEntity.ok(list);
     }
 
-    @PutMapping("foodpovider/{id}")
+    @PutMapping("updatefoodpovider/{id}")
     public ResponseEntity<foodprovider> updateFoodProvider(@PathVariable Integer Id, @RequestBody foodprovider fp) {
         fp = foodproviderService.updateFoodProvider(Id, fp);
         return ResponseEntity.ok(fp);

@@ -19,25 +19,20 @@ public class CustomerController {
 
     private CustomerService customerService;
 
-    @GetMapping("/customer")
+    @GetMapping("/getAllCustomers")
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
 
 
-    @PostMapping("/Customer")
-    public Customer createCustomer( @RequestBody Customer customer)  //mapping the JSON Body tot he object directly
-    {   /*if(customer!=null){
-        customer = customerService.createCustomer(customer);
-        return new ResponseEntity(customer, HttpStatus.CREATED);
-    }
-        return null;*/
+    @PostMapping("/createCustomer")
+    public Customer createCustomer( @RequestBody Customer customer){  //mapping the JSON Body tot he object directly
         return customerRepository.save(customer);
     }
 
 
-    @GetMapping("Customer/{id}")
+    @GetMapping("getCustomerById/{id}")
     public ResponseEntity<Customer> getCustomersById(@PathVariable(value = "id") Integer Id)
             throws ResourceNotFoundException {
         Customer customer =
@@ -48,7 +43,7 @@ public class CustomerController {
     }
 
 
-    @PutMapping("/Customer/{id}")
+    @PutMapping("/updateCustomer/{id}")
     public ResponseEntity<Customer> updateUser(
             @PathVariable(value = "id") Integer Id,  @RequestBody Customer customerDetails)
             throws ResourceNotFoundException {

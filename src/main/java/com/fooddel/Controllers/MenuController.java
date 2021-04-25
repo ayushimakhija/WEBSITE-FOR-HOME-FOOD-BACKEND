@@ -20,7 +20,7 @@ public class MenuController {
      private MenuService menuService;
 
 
-    @PostMapping("/menu")
+    @PostMapping("/createMenu")
     public Menu createMenu(@RequestBody Menu menu)
     {
         return menuService.createMenu(menu);
@@ -36,7 +36,7 @@ public class MenuController {
         return null;
     }
 
-    @PutMapping("menu/{id}")
+    @PutMapping("updateMenu/{id}")
     public ResponseEntity<Menu> updateMenu(@PathVariable Integer id, @RequestBody Menu menu) {
          menu= menuService.updateMenu(id, menu);
         return ResponseEntity.ok(menu);
