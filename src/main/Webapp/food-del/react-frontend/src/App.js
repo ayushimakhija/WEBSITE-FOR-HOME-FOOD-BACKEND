@@ -9,8 +9,9 @@ import Search from "./component/Search";
 import FoodProviderList from "./component/FoodProviderList";
 import FoodProviderPage from "./component/FoodProviderPage";
 import FoodProviderMenu from "./component/FoodProviderMenu";
-
-
+import Footer from "./component/Footer";
+import Entry from "./component/Entry"
+import Boxes from "./component/Boxes";
 
 
 class App extends Component{
@@ -31,9 +32,19 @@ class App extends Component{
                 <Route exact path='/FoodProviderList' component={FoodProviderList}/>
                 <Route exact path='/FoodProviderPage' component={FoodProviderPage}/>
                 <Route exact path='/FoodProviderMenu' component={FoodProviderMenu}/>
+                <Route exact path='/Boxes' component={Boxes}/>
               </Switch>
             </div>
           </Router>
+          {/* <dl className="dictionary"></dl> */}
+          {/* <Entry 
+emo="💪"
+term="Tense Biceps"
+des=" “You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
+
+              />
+<Footer /> */}
+
         </div>
     )
   }
