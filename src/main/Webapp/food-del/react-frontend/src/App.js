@@ -44,7 +44,7 @@ des=" “You can do that!” or “I feel strong!” Arm with tense biceps. Also
 
               />
 <Footer /> */}
-
+<Footer /> 
         </div>
     )
   }
