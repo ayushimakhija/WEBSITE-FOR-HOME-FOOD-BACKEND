@@ -4,13 +4,14 @@ import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
@@ -36,7 +37,7 @@ public class CustomerService {
         return customer;  //entity is returned along with the status
     }
 
-    public ResponseEntity<Customer> updateCustomer(Integer id, Customer customerDetails)
+    public Customer updateCustomer(Integer id, Customer customerDetails)
     {
         Customer customer= customerRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("Customer not exists with id:"+id));
@@ -50,7 +51,7 @@ public class CustomerService {
 
 
         Customer updatedCustomer= customerRepository.save(customer);
-        return ResponseEntity.ok(updatedCustomer);
+        return updatedCustomer;
     }
     public Customer getCustomerByEmail(String emailId){
 

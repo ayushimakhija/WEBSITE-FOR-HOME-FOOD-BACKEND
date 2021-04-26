@@ -14,21 +14,14 @@ function createRepeated(detail)
     />);
 }
 
-function Boxes() {
+function Boxes(emojipedia) {
     return (
         <div>
             <h1>
                 <span></span>
             </h1>
-
             <dl className="dictionary">
-
                 { emojipedia.map(createRepeated)};
-
-
-
-
-
             </dl>
         </div>
     );

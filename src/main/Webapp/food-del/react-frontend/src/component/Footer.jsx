@@ -8,16 +8,6 @@ function Footer() {
         <p>Copyright ⓒ {date.getFullYear()}</p>
       </footer>
     </div>
-
-
-
-
-  
-
-
-
-
-
   );
 }
 

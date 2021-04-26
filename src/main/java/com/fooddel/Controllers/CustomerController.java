@@ -1,6 +1,7 @@
 package com.fooddel.Controllers;
 
 import com.fooddel.Services.CustomerService;
+import com.fooddel.Services.foodProviderService;
 import com.fooddel.beans.Customer;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.CustomerRepository;
@@ -14,25 +15,28 @@ import java.util.List;
 @RestController
 @RequestMapping("api")
 public class CustomerController {
-    @Autowired
-    private CustomerRepository customerRepository;
+
 
     private CustomerService customerService;
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping("/getAllCustomers")
     public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
+        return customerService.getCustomers();
     }
 
 
 
     @PostMapping("/createCustomer")
     public Customer createCustomer( @RequestBody Customer customer){  //mapping the JSON Body tot he object directly
-        return customerRepository.save(customer);
+        return customerService.createCustomer(customer);
     }
 
 
-    @GetMapping("getCustomerById/{id}")
+    /*@GetMapping("getCustomerById/{id}")
     public ResponseEntity<Customer> getCustomersById(@PathVariable(value = "id") Integer Id)
             throws ResourceNotFoundException {
         Customer customer =
@@ -40,7 +44,7 @@ public class CustomerController {
                         .findById(Id)
                         .orElseThrow(() -> new ResourceNotFoundException("customer not found on :: " + Id));
         return ResponseEntity.ok().body(customer);
-    }
+    }*/
 
 
     @PutMapping("/updateCustomer/{id}")
@@ -48,20 +52,7 @@ public class CustomerController {
             @PathVariable(value = "id") Integer Id,  @RequestBody Customer customerDetails)
             throws ResourceNotFoundException {
 
-        Customer customer =
-                customerRepository
-                        .findById(Id)
-                        .orElseThrow(() -> new ResourceNotFoundException("User not found on :: " + Id));
-
-        customer.setFirstName(customerDetails.getFirstName());
-        customer.setLastName(customerDetails.getLastName());
-        customer.setContactNumber(customerDetails.getContactNumber());
-        customer.setEmailId(customerDetails.getEmailId());
-        customer.setPassword(customerDetails.getPassword());
-        customer.setAddress(customerDetails.getAddress());
-
-
-        Customer updatedCustomer= customerRepository.save(customer);
+        Customer updatedCustomer= customerService.updateCustomer(Id,customerDetails);
         return ResponseEntity.ok(updatedCustomer);
     }
 

@@ -1,5 +1,6 @@
 package com.fooddel.Controllers;
 import com.fooddel.Services.MenuService;
+import com.fooddel.Services.foodProviderService;
 import com.fooddel.beans.Menu;
 import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api")
 public class MenuController {
-
+    private MenuService menuService;
     @Autowired
-    private MenuRepository menuRepository;
-
-
-     private MenuService menuService;
+    public MenuController(MenuService menuService) {
+        this.menuService = menuService;
+    }
 
 
     @PostMapping("/createMenu")
@@ -28,12 +28,9 @@ public class MenuController {
 
 
     @GetMapping("/menu/{dishName}")
-    public ResponseEntity<List<Menu>> getMenuByDishName(@PathVariable String dishName) {
-       // List<Menu> menu = menuService.getMenuByDishName(dishName);
-        //if(menu!=null) {
-           // return ResponseEntity.ok(menu);
-       // }
-        return null;
+    public List<Menu> getMenuByDishName(@PathVariable String dishName) {
+        List<Menu> menu = menuService.getMenuByDishName(dishName);
+        return menu;
     }
 
     @PutMapping("updateMenu/{id}")

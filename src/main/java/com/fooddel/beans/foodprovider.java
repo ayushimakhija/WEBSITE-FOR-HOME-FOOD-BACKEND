@@ -1,5 +1,7 @@
 package com.fooddel.beans;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,6 +19,8 @@ public class foodprovider {
     private String location;
     @Column(nullable=false)
     private String contactNumber;
+    @Column(nullable=false)
+    private String companyName;
     @OneToMany(mappedBy = "dishId")
     private List<Menu> dishLists;
 
@@ -25,10 +29,11 @@ public class foodprovider {
 
     }
 
-    public foodprovider(String emailId, String password, String location,String contactNumber) {
+    public foodprovider(String emailId, String password, String location,String companyName,String contactNumber) {
         this.emailId = emailId;
         this.password = password;
         this.location = location;
+        this.companyName = companyName;
         this.contactNumber= contactNumber;
 
     }
@@ -54,6 +59,15 @@ public class foodprovider {
 
     public String getPassword() {
         return password;
+    }
+
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getLocation() {

@@ -6,10 +6,11 @@ import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.FoodProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class foodProviderService {
     private final FoodProviderRepository foodproviderRepository;
 

@@ -13,32 +13,35 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api")
 public class foodProviderController {
-    @Autowired
-    private FoodProviderRepository foodproviderRepository;
 
     private foodProviderService foodproviderService;
+    @Autowired
+    public foodProviderController(foodProviderService foodproviderService) {
+        this.foodproviderService = foodproviderService;
+    }
 
     @GetMapping("/getAllFoodprovider")
     public List<foodprovider> getfoodProviders() {
-        return foodproviderRepository.findAll();
+        return foodproviderService.getfoodProviders();
     }
 
 
     @PostMapping("/createfoodprovider")
     public foodprovider createFoodProvider(@RequestBody foodprovider fp)  //mapping the JSON Body tot he object directly
     {
-        return foodproviderRepository.save(fp);
+        return foodproviderService.createFoodProvider(fp);
     }
 
 
     @GetMapping("/foodprovider/{location}")
-    public ResponseEntity<List<foodprovider>> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
+    public List<foodprovider> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
         List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
-        return ResponseEntity.ok(list);
+        System.out.println(list);
+        return list;
     }
 
     @PutMapping("updatefoodpovider/{id}")

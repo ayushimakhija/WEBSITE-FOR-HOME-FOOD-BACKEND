@@ -20,18 +20,21 @@ public class Customer {
     public String emailId;
     @Column(nullable = false)
     public String password;
+    @Column(nullable = false)
+    public boolean subscribe;
 
     //default constructor
     public Customer() {}
 
     public Customer(String firstName, String lastName, String contactNumber,
-                    String address, String emailId, String password) {
+                    String address, String emailId, String password,boolean subscribe ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactNumber = contactNumber;
         this.address = address;
         this.emailId = emailId;
         this.password = password;
+        this.subscribe = subscribe;
     }
     //@OneToMany(mappedBy ="itemsorder")
     //private List<itemsorder> orders;
@@ -75,6 +78,14 @@ public class Customer {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    public boolean isSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(boolean subscribe) {
+        this.subscribe = subscribe;
     }
 
     public String getPassword() {
