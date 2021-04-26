@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import Search from './Search'
+import Footer from './Footer'
 class Welcome extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +20,9 @@ class Welcome extends Component {
                 <div className="Search">
                     <Search/>
                 </div>
-
+            <div>
+            <Footer/>
+            </div>
             </div>
         );
     }

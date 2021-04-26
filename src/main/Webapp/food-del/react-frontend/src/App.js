@@ -37,14 +37,7 @@ class App extends Component{
             </div>
           </Router>
           {/* <dl className="dictionary"></dl> */}
-          {/* <Entry 
-emo="💪"
-term="Tense Biceps"
-des=" “You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
 
-              />
-<Footer /> */}
-<Footer /> 
         </div>
     )
   }
