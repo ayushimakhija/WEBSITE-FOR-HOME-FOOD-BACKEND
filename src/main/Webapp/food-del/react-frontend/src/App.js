@@ -2,12 +2,13 @@ import React, {Component} from "react";
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 import './App.css';
 import Welcome from "./component/Welcome"
-import Navbar from './component/Navbar'
+import Header from './component/Header'
 import SignIn from "./component/Signin";
 import SignUp from "./component/SignUp";
 import Search from "./component/Search";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodProviderList from "./component/FoodProviderList";
-import Boxes from "./component/Boxes";
+import Cards from "./component/Cards";
 
 
 class App extends Component{
@@ -16,7 +17,7 @@ class App extends Component{
         <div>
           <Router>
             <div>
-              <Navbar/>
+              <Header/>
             </div>
             <div className="container">
               <Switch>
@@ -26,7 +27,7 @@ class App extends Component{
                 <Route exact path='/SignUp' component={SignUp}/>
                 <Route exact path='/Search' component={Search}/>
                 <Route exact path='/FoodProviderList' component={FoodProviderList}/>
-                <Route exact path='/Boxes' component={Boxes}/>
+                <Route>exact path='/Cards' component={Cards}</Route>
               </Switch>
             </div>
           </Router>

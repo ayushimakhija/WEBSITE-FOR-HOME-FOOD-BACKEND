@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import Search from './Search'
 import Footer from './Footer'
+import Cards from "./Cards";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 class Welcome extends Component {
     constructor(props) {
         super(props);
@@ -17,12 +19,12 @@ class Welcome extends Component {
 
                         – Winona LaDuke</h5>
                 </div>
-                <div className="Search">
-                    <Search/>
-                </div>
-            <div>
-            <Footer/>
+            <div className="Search">
+                <Cards/>
+                <br/>
+                <Cards/>
             </div>
+
             </div>
         );
     }

@@ -9,7 +9,7 @@ body {
     padding: 0 15px 0 15px;
 }
 nav {
-    height: 5%;
+    height: 0%;
     width: 100%;
 }
 nav ul {
@@ -24,7 +24,7 @@ nav ul li {
 nav ul li a {
     color: Black;
     font-size: 26px;
-    padding: 7px;
+    padding: 0px;
     text-decoration: bisque;
 }
 nav ul li a:hover{
@@ -59,30 +59,21 @@ label.logo {
 }
 
 
-.Welcome .Search{
-    background-color: rgba(255,0,0,0.1);
-    width: 60%;
-}
+
 .Search{
     color: Black;
     position: inherit;
-    text-align: center;
-    margin: 10% 10% 0% 40%;
-    font-size: 20px;
-    width: 60%;
+    margin: 10% 10% 0% 55%;
+    font-size: 13px;
+    width: 40%;
     padding: 0%;
     line-height: 10px;
     border-radius: 2%;
     border: 1px -o-highlight-border solid ;
     background-color: rgba(255, 255, 0,0.1);
 }
-.Search a{
-    color: lightpink;
-    text-decoration: none;
-}
-.Search a:hover{
-    color: lavenderblush;
-}
+
+
 .SignIn{
     color: Black;
     position: absolute;
