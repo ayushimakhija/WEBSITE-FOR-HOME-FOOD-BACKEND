@@ -15,10 +15,10 @@ class SignUp extends Component {
             contactNumber: "",
             password: "",
             address: "",
-            foodDeliver:"No"
+            subscribe:"false"
         }
         this.handleChange = this.handleChange.bind(this)
-        this.saveUser = this.saveCustomer.bind(this);
+        this.saveCustomer = this.saveCustomer.bind(this);
     }
 
     handleChange(event) {
@@ -33,7 +33,7 @@ class SignUp extends Component {
         let customer = {
             firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email,
             contactNumber: this.state.contactNumber, password: this.state.password, address: this.state.address,
-            foodDeliverFlag: this.state.isfoodDeliver === "Yes"
+            subscribe:this.state.subscribe
         }
 
         console.log('User =>' + JSON.stringify(customer));
@@ -49,24 +49,14 @@ class SignUp extends Component {
             <div className="SignUp">
                 <div className="register">
                     <h1>Create an account</h1>
-                    <p>Already have an account?<Link to="/Signin"> Sign in</Link></p>
+                    <p><h5>Already have an account?</h5><Link to="/Signin"> Sign in</Link></p>
                     <br/><br/><br/>
                 </div>
                 <div className="main">
                     <form onSubmit={this.handleSubmit}>
-                        {/*<h2 className="type">Account Type</h2>*/}
-                        <label className="firstLabel">Do you want a FoodFeliver account?  </label>
-                        <select
-                            name="isfoodDeliver"
-                            id="isfoodDeliver"
-                            onChange={this.handleChange}
-                        >
-                            <option value="No">No</option>
-                            <option value="Yes">Yes</option>
-                        </select>
+
                         <br/><br/>
                         <div>
-                            {/*<h2 className="name">Company Name</h2>*/}
                             <input
                                 type="text"
                                 name="address"
@@ -77,9 +67,8 @@ class SignUp extends Component {
                             />
                             {/*<br/><br/>*/}
                         </div>
-                        <div style={{display: this.state.isfoodDeliver === "No" ? "block" : "none"}} id="name">
-                            {/*<h2 className="name">Name</h2>*/}
-                            {/*<label className="firstLabel">First Name: </label>*/}
+                        <div>
+
 
                             <input
                                 type="text"
@@ -90,8 +79,7 @@ class SignUp extends Component {
                                 onChange={this.handleChange}
                             />
                             <br/>
-                            {/*<br/>*/}
-                            {/*<label className="lastLabel">Last Name: </label>*/}
+
                             <input
                                 type="text"
                                 name="lastName"
@@ -124,6 +112,7 @@ class SignUp extends Component {
                             onChange={this.handleChange}
                         />
                         <br/>
+
                         {/*<br/>*/}
                         {/*<h2 className="name">Password</h2>*/}
                         <input

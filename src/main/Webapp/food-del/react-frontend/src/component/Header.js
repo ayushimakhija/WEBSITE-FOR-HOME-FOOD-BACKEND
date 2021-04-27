@@ -27,6 +27,12 @@ class Header extends Component{
                                     <a className="nav-link " href="" tabindex="-1" aria-disabled="true">Sign Up</a>
                                 </Link>
                             </li>
+
+                        <li className="nav-item">
+                            <Link to="/FoodProviderPage">
+                                <a className="nav-link " href="" tabIndex="-1" aria-disabled="true">Vendors</a>
+                            </Link>
+                        </li>
                         </ul>
                     </div>
                     <div className="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo02">

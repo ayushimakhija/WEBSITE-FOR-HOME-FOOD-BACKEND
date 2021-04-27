@@ -22,7 +22,6 @@ class Welcome extends Component {
             <div className="Search">
                 <Cards/>
                 <br/>
-                <Cards/>
             </div>
 
             </div>

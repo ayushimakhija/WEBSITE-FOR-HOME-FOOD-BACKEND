@@ -9,6 +9,9 @@ import Search from "./component/Search";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodProviderList from "./component/FoodProviderList";
 import Cards from "./component/Cards";
+import FoodProviderPage from "./component/FoodProviderPage";
+import FoodProviderLogin from "./component/FoodProviderLogin";
+import FoodProviderRegister from "./component/FoodProviderRegister"
 
 
 class App extends Component{
@@ -27,11 +30,14 @@ class App extends Component{
                 <Route exact path='/SignUp' component={SignUp}/>
                 <Route exact path='/Search' component={Search}/>
                 <Route exact path='/FoodProviderList' component={FoodProviderList}/>
-                <Route>exact path='/Cards' component={Cards}</Route>
+                <Route exact path='/Cards' component={Cards}/>
+                <Route exact path='/FoodProviderPage' component={FoodProviderPage}/>
+                <Route exact path='/FoodProviderLogin' component={FoodProviderLogin}/>
+                <Route exact path='/FoodProviderRegister' component={FoodProviderRegister}/>
               </Switch>
             </div>
           </Router>
-          {/* <dl className="dictionary"></dl> */}
+
 
         </div>
     )
