@@ -21,6 +21,7 @@ class SignIn extends Component{
     }
     render() {
         return (
+            <div>
             <div className="SignIn">
                 <div className="register">
                     <h1>Sign In</h1>
@@ -54,6 +55,16 @@ class SignIn extends Component{
                         <p>New at the portal?<Link to="/SignUp"> Sign Up</Link></p>
 
                     </form>
+                </div>
+            </div>
+                <div className="Welcome">
+                    <div className="content">
+                        <label className="logo"> Home delivery </label>
+                        <h4>"This is website for Students who lives away from their home and are always craving for home food "</h4>
+                        <h5>“Food for us comes from our relatives, whether they have wings or fins or roots. That is how we consider food. Food has a culture. It has a history. It has a story. It has relationships.”
+
+                            – Winona LaDuke</h5>
+                    </div>
                 </div>
             </div>
         );

@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {Link} from "react-router-dom";
 import customerService from "../Services/customerService";
+import Cards from "./Cards";
 
 
 class SignUp extends Component {
@@ -44,6 +45,7 @@ class SignUp extends Component {
 
     render() {
         return (
+            <div className="SignUpPage">
             <div className="SignUp">
                 <div className="register">
                     <h1>Create an account</h1>
@@ -138,8 +140,12 @@ class SignUp extends Component {
                     </form>
                 </div>
             </div>
+                <div className="Cards">
+                <Cards/><br/>
+                </div>
+            </div>
         )
     }
 }
 
-export default SignUp;
+export default SignUp
