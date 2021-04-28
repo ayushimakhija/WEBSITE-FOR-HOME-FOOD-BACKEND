@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {Link} from "react-router-dom";
 import customerService from "../Services/customerService";
 import Cards from "./Cards";
+import axios from "axios";
 
 
 class SignUp extends Component {
@@ -11,10 +12,10 @@ class SignUp extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            email: "",
             contactNumber: "",
-            password: "",
             address: "",
+            emailId:"",
+            password :"",
             subscribe:"false"
         }
         this.handleChange = this.handleChange.bind(this)
@@ -28,19 +29,30 @@ class SignUp extends Component {
         })
     }
 
-    saveCustomer = (e) => {
-        e.preventDefault();
+    saveCustomer= (event) =>{
+        event.preventDefault();
         let customer = {
-            firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email,
-            contactNumber: this.state.contactNumber, password: this.state.password, address: this.state.address,
-            subscribe:this.state.subscribe
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            contactNumber: this.state.contactNumber,
+            address: this.state.address,
+            emailId: this.state.emailId,
+            password : this.state.password,
+            subscribe: this.state.subscribe
+
         }
-
-        console.log('User =>' + JSON.stringify(customer));
-
-        customerService.createCustomer(customer).then(res => {
-            this.props.history.push('/Signin');
-        });
+        axios.post('http://localhost:8082/api/createCustomer',customer)
+            .then(response =>{
+                console.log(response);
+                console.log(response.data);
+                {this.props.history.push('/');
+                    console.log("Account Created");
+                }
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+        alert('Account Created ');
     }
 
     render() {

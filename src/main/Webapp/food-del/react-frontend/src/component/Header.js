@@ -21,7 +21,7 @@ class Header extends Component{
         let foodprovider = {
             location: this.state.location,
         }
-        axios.post('http://localhost:8081/api/foodprovider/location',foodprovider)
+        axios.post('http://localhost:8082/api/foodprovider/location',foodprovider)
             .then(response =>{
                 console.log(response);
                 console.log(response.data);
