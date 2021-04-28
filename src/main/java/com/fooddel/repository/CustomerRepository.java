@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 
-    @Query(value = "SELECT * FROM Customer u WHERE u.emailId =:emailId", nativeQuery = true)
+    @Query(value = "SELECT * FROM customer u WHERE u.email_id =:emailId", nativeQuery = true)
     public Customer findByEmail(@Param("emailId") String emailId);
 
 }

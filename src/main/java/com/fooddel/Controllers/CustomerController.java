@@ -1,17 +1,15 @@
 package com.fooddel.Controllers;
 
 import com.fooddel.Services.CustomerService;
-import com.fooddel.Services.foodProviderService;
 import com.fooddel.beans.Customer;
 import com.fooddel.exceptions.ResourceNotFoundException;
-import com.fooddel.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin("*")
+@CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
 public class CustomerController {
@@ -56,7 +54,7 @@ public class CustomerController {
         return ResponseEntity.ok(updatedCustomer);
     }
 
-    /*@PostMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<Customer> login(@RequestBody Customer customer){
         String email = customer.getEmailId();
         String pass = customer.getPassword();
@@ -66,10 +64,9 @@ public class CustomerController {
 
         if(loggedIn.getEmailId().equals(email) && loggedIn.getPassword().equals(pass)){
             System.out.println("Password Matched");
-//               System.out.println("flag after:"+ check.isLog_status());
             return ResponseEntity.ok(loggedIn);
         }
 
         return null;
-    }*/
+    }
 }

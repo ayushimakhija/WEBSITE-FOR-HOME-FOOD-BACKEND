@@ -1,6 +1,4 @@
 package com.fooddel;
-
-
 import com.fooddel.beans.Customer;
 import com.fooddel.beans.Menu;
 import com.fooddel.beans.foodprovider;
@@ -29,7 +27,6 @@ public class Main {
     InitializingBean sendDatabase(){
         return ()->{
             customerRepository.save(new Customer("ayushi","makhija","7869054251","narsinghpur","ayushi9ym.19@gmail.com","ayushi",false));
-            customerRepository.save(new Customer("guddi","makhija","7869054251","narsinghpur","ayushi9yn.19@gmail.com","ayushi",false));
             foodproviderRepository.save(new foodprovider("ayushi9yb.19@gmail.com","ayushi","bangalore","7869054251","ayushiCafe"));
             foodproviderRepository.save(new foodprovider("chirag16@gmail.com","chirag","jabalpur","9875647839","chiragCafe"));
             menuRepository.save(new Menu("pizza","my fav","chbhbd","230","Monday"));

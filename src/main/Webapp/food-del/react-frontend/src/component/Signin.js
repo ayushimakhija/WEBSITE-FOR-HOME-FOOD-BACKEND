@@ -1,23 +1,43 @@
 import React,{Component} from "react"
 import {Link} from 'react-router-dom';
+import axios from "axios";
 class SignIn extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
+            emailId: "",
             password: "",
-            errorMessage: false
+            errorMessage : false
         }
-        this.handleChange=this.handleChange.bind(this)
+        this.EmailHandler=this.EmailHandler.bind(this)
+        this.PasswordHandler=this.PasswordHandler.bind(this)
+        this.handleClick= this.handleClick.bind(this)
     }
-    handleChange = (event) => {
-        const {name, value} = event.target
-        this.setState({
-            [name]: value
-        })
+
+    EmailHandler= (event) => {
+        this.setState({emailId: event.target.value});
     }
-    handleClick(){
-        alert("Login")
+    PasswordHandler= (event) => {
+        this.setState({password: event.target.value});
+    }
+    handleClick= (event) =>{
+        event.preventDefault();
+        let customer = {
+            emailId: this.state.emailId,
+            password: this.state.password
+        }
+        axios.post('http://localhost:8081/api/login',customer)
+            .then(response =>{
+                console.log(response);
+                console.log(response.data);
+                {this.props.history.push('/');
+                    console.log("login");
+                }
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+        alert('login');
     }
     render() {
         return (
@@ -29,13 +49,13 @@ class SignIn extends Component{
                 <div className="main">
                     <form>
                         <input
-                            type="email"
-                            name="email"
+                            type="emailId"
+                            name="emailId"
                             required="True"
                             className="email"
                             placeholder="Email address"
-                            value={this.state.email}
-                            onChange={this.handleChange}
+                            value={this.state.emailId}
+                            onChange={this.EmailHandler}
                         />
                         <br/>
 
@@ -46,7 +66,7 @@ class SignIn extends Component{
                             className="password"
                             placeholder="Password"
                             value={this.state.password}
-                            onChange={this.handleChange}
+                            onChange={this.PasswordHandler}
                         />
                         <h3 style={{display: this.state.errorMessage ? "block" : "none"}}>Incorrect
                             Username/Password</h3>

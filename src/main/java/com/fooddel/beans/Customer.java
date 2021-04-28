@@ -2,7 +2,7 @@ package com.fooddel.beans;
 import javax.persistence.*;
 import java.util.List;
 @Entity
-@Table(name = "Customer")
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class Customer {
     public String contactNumber;
     @Column(nullable = false)
     public String address;
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     public String emailId;
     @Column(nullable = false)
     public String password;
