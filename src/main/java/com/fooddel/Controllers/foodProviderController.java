@@ -53,7 +53,7 @@ public class foodProviderController {
 
 
 
-    /*@PostMapping("/login")
+    @PostMapping("/foodprovider/login")
     public ResponseEntity<foodprovider> login(@RequestBody foodprovider fp){
         String email = fp.getEmailId();
         String pass = fp.getPassword();
@@ -68,5 +68,5 @@ public class foodProviderController {
         }
 
         return null;
-    }*/
+    }
 }

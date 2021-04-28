@@ -26,7 +26,7 @@ class SignIn extends Component{
             emailId: this.state.emailId,
             password: this.state.password
         }
-        axios.post('http://localhost:8081/api/login',customer)
+        axios.post('http://localhost:8081/api/customer/login',customer)
             .then(response =>{
                 console.log(response);
                 console.log(response.data);

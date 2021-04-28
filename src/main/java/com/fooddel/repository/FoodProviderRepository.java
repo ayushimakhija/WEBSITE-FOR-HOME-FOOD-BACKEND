@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface FoodProviderRepository extends JpaRepository<foodprovider,Integer> {
-    @Query(value = "SELECT * FROM foodprovider fp WHERE fp.emailId =:emailId", nativeQuery = true)
+    @Query(value = "SELECT * FROM foodprovider fp WHERE fp.email_id =:emailId", nativeQuery = true)
     public foodprovider findByEmailId(@Param("emailId") String emailId);
 
     @Query(value = "SELECT * FROM foodprovider fp WHERE fp.location = :location" , nativeQuery = true)

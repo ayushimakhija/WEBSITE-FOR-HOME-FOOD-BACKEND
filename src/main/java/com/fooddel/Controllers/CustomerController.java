@@ -54,7 +54,7 @@ public class CustomerController {
         return ResponseEntity.ok(updatedCustomer);
     }
 
-    @PostMapping("/login")
+    @PostMapping("/customer/login")
     public ResponseEntity<Customer> login(@RequestBody Customer customer){
         String email = customer.getEmailId();
         String pass = customer.getPassword();

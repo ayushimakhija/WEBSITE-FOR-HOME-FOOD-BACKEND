@@ -5,7 +5,6 @@ import Welcome from "./component/Welcome"
 import Header from './component/Header'
 import SignIn from "./component/Signin";
 import SignUp from "./component/SignUp";
-import Search from "./component/Search";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodProviderList from "./component/FoodProviderList";
 import Cards from "./component/Cards";
@@ -28,7 +27,6 @@ class App extends Component{
                 <Route exact path='/' component={Welcome}/>
                 <Route exact path='/Signin' component={SignIn}/>
                 <Route exact path='/SignUp' component={SignUp}/>
-                <Route exact path='/Search' component={Search}/>
                 <Route exact path='/FoodProviderList' component={FoodProviderList}/>
                 <Route exact path='/Cards' component={Cards}/>
                 <Route exact path='/FoodProviderPage' component={FoodProviderPage}/>
