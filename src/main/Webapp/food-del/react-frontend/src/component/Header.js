@@ -1,9 +1,38 @@
 import React, {Component} from "react"
 import {Link} from 'react-router-dom'
 import {Navbar,NavbarBrand,Nav,NavLink,Button,Form} from "reactstrap";
+import axios from "axios";
 
 
 class Header extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            location :''
+        }
+        this.LocationHandler=  this.LocationHandler.bind(this)
+        this.HandleClick =  this.HandleClick.bind(this)
+    }
+    LocationHandler(event){
+        this.setState({location: event.target.value});
+    }
+    HandleClick(event){
+        event.preventDefault();
+        let foodprovider = {
+            location: this.state.location,
+        }
+        axios.post('http://localhost:8081/api/foodprovider/location',foodprovider)
+            .then(response =>{
+                console.log(response);
+                console.log(response.data);
+                {this.props.history.push('/');
+                    console.log("Search succesufully");
+                }
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+    }
     render() {
         return (
             <div>
@@ -39,8 +68,9 @@ class Header extends Component{
                         <ul className="navbar-nav ml-auto me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <form className="d-flex">
-                                    <input className="form-control me-2" type="search" placeholder="Enter location" aria-label="Search"/>
-                                    <button className="btn btn-outline-success" type="submit">Search</button>
+                                    <input className="form-control me-2" type="search" placeholder="Enter location" value={this.state.location}
+                                           onChange={this.LocationHandler}aria-label="Search"/>
+                                    <button className="btn btn-outline-success" type="submit" onClick={this.HandleClick}>Search</button>
                                 </form>
                             </li>
                         </ul>

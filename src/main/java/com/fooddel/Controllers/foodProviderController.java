@@ -11,8 +11,8 @@ import com.fooddel.repository.FoodProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
@@ -37,8 +37,9 @@ public class foodProviderController {
     }
 
 
-    @GetMapping("/foodprovider/{location}")
-    public List<foodprovider> getFoodProvidersByLocation(@PathVariable(value="location") String location) {
+    @PostMapping("/foodprovider/location")
+    public List<foodprovider> getFoodProvidersByLocation(@RequestBody foodprovider fp) {
+        String location = fp.getLocation();
         List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
         System.out.println(list);
         return list;
