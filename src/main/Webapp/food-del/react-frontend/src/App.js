@@ -12,6 +12,7 @@ import FoodProviderPage from "./component/FoodProviderPage";
 import FoodProviderLogin from "./component/FoodProviderLogin";
 import FoodProviderRegister from "./component/FoodProviderRegister"
 import Footer from "./component/Footer";
+import  Signin from "./component/Signin"
 
 
 class App extends Component{
@@ -26,6 +27,7 @@ class App extends Component{
               <Switch>
 
                 <Route exact path='/' component={Welcome}/>
+                {/*<Signin />*/}
                 <Route exact path='/Signin' component={SignIn}/>
                 <Route exact path='/SignUp' component={SignUp}/>
                 <Route exact path='/FoodProviderList' component={FoodProviderList}/>
