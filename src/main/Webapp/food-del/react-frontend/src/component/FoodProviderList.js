@@ -1,6 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import axios from 'axios';
+import Cards from "./Cards";
 
 class FoodProviderList extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class FoodProviderList extends Component {
     }
 
     render() {
-        const {foodproviderList} = this.state
+       /* const {foodproviderList} = this.state
         return (
             <div className="FP"><h1>List of Food Provider</h1>{
                     foodproviderList.length?
@@ -38,7 +39,17 @@ class FoodProviderList extends Component {
                     ):null
 
             }</div>
-        )
+        )*/
+        return(
+            <div>
+        <Cards/>
+        <Cards/>
+        <Cards/>
+                <Cards/>
+                <Cards/>
+                <Cards/>
+            </div>
+    )
     }
 }
-export default FoodProviderList
+export default FoodProviderList;

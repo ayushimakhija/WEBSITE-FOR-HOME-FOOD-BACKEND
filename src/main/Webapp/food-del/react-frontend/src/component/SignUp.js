@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import {Link} from "react-router-dom";
-import customerService from "../Services/customerService";
 import Cards from "./Cards";
 import axios from "axios";
 

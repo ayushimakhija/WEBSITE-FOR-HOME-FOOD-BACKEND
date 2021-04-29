@@ -11,8 +11,8 @@ import Cards from "./component/Cards";
 import FoodProviderPage from "./component/FoodProviderPage";
 import FoodProviderLogin from "./component/FoodProviderLogin";
 import FoodProviderRegister from "./component/FoodProviderRegister"
-import Footer from "./component/Footer";
-import  Signin from "./component/Signin"
+import Dish from "./component/Dish";
+import DishList from "./component/DishList";
 
 
 class App extends Component{
@@ -35,11 +35,13 @@ class App extends Component{
                 <Route exact path='/FoodProviderPage' component={FoodProviderPage}/>
                 <Route exact path='/FoodProviderLogin' component={FoodProviderLogin}/>
                 <Route exact path='/FoodProviderRegister' component={FoodProviderRegister}/>
+                <Route exact path='/Dish' component={Dish}/>
+                <Route exact path='/DishList' component={DishList}/>
               </Switch>
             </div>
           </Router>
 
-<Footer />
+
         </div>
     )
   }

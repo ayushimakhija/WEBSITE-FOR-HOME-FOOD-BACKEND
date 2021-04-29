@@ -22,12 +22,18 @@ class Header extends Component{
             location: this.state.location,
         }
         axios.post('http://localhost:8082/api/foodprovider/location',foodprovider)
-            .then(response =>{
+            .then(response => {
                 console.log(response);
                 console.log(response.data);
-                {this.props.history.push('/');
-                    console.log("Search succesufully");
+                if (response.data.length != 0){
+                    console.log("Search completed");
+            }
+                else{
+                    console.log("no such location exist");
+                    alert("No such location exist");
+                    this.props.history.push('/');
                 }
+
             })
             .catch(error =>{
                 console.log(error)
@@ -58,7 +64,7 @@ class Header extends Component{
                             </li>
 
                         <li className="nav-item">
-                            <Link to="/FoodProviderPage">
+                            <Link to="/DishList">
                                 <a className="nav-link " href="" tabIndex="-1" aria-disabled="true">Vendors</a>
                             </Link>
                         </li>

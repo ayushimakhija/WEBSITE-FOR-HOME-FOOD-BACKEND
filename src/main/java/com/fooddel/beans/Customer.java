@@ -1,6 +1,9 @@
 package com.fooddel.beans;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
 @Table(name = "customer")
 public class Customer {
