@@ -11,6 +11,7 @@ import Cards from "./component/Cards";
 import FoodProviderPage from "./component/FoodProviderPage";
 import FoodProviderLogin from "./component/FoodProviderLogin";
 import FoodProviderRegister from "./component/FoodProviderRegister"
+import Footer from "./component/Footer";
 
 
 class App extends Component{
@@ -36,7 +37,7 @@ class App extends Component{
             </div>
           </Router>
 
-
+<Footer />
         </div>
     )
   }
