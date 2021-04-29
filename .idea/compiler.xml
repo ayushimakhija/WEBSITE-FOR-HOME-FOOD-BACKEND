@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SPE_PROJECT" />
         <module name="SPE_FINAL-PROJECT" />
+        <module name="SPE_FINAL_PROJECT" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SPE_FINAL-PROJECT" options="-parameters" />
+      <module name="SPE_FINAL_PROJECT" options="-parameters" />
       <module name="SPE_PROJECT" options="-parameters" />
     </option>
   </component>
