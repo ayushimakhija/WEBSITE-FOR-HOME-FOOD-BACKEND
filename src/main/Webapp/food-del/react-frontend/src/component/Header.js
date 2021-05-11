@@ -1,7 +1,9 @@
 import React, {Component} from "react"
 import {Link} from 'react-router-dom'
+import { withRouter } from "react-router";
 import {Navbar,NavbarBrand,Nav,NavLink,Button,Form} from "reactstrap";
 import axios from "axios";
+import PostSearch from "./PostSearch";
 
 
 class Header extends Component{
@@ -23,11 +25,15 @@ class Header extends Component{
         }
         axios.post('http://localhost:8082/api/foodprovider/location',foodprovider)
             .then(response =>{
-                console.log(response);
-                console.log(response.data);
-                {this.props.history.push('/');
-                    console.log("Search succesufully");
-                }
+                // console.log(response);
+                // console.log(response.data);
+                this.props.setVendors(response.data);
+                this.props.history.push(`/location/${this.state.location}`);
+console.log(this.props);
+                    // {this.props.history.push('/');
+                    //
+                    //     console.log("login");
+                    // }
             })
             .catch(error =>{
                 console.log(error)
@@ -83,4 +89,4 @@ class Header extends Component{
     }
 }
 
-export default Header
+export default withRouter(Header)

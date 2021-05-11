@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Footer from './Footer'
 import Cards from "./Cards";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Entry from "./Entry";
 
 class Welcome extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class Welcome extends Component {
                 <Cards/>
                 <br/>
             </div>
+
 
             </div>
         );
