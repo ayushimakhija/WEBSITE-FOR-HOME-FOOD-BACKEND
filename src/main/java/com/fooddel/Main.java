@@ -9,7 +9,11 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+
+import javax.sql.DataSource;
+
 
 @SpringBootApplication
 public class Main {
@@ -23,6 +27,21 @@ public class Main {
         SpringApplication.run(Main.class, args);
 
     }
+    @Bean
+    public DataSource getDataSource() {
+        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+        dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
+        String url = System.getenv("DATABASE_HOST");
+        if(url !=null){
+            dataSourceBuilder.url("jdbc:mysql://spe-mysql:3306/food?createDatabaseIfNotExist=true");
+        }else{
+            dataSourceBuilder.url("jdbc:mysql://localhost:3306/food");
+        }
+        dataSourceBuilder.username("spe");
+        dataSourceBuilder.password("A123456789a@#");
+        return dataSourceBuilder.build();
+    }
+
     @Bean
     InitializingBean sendDatabase(){
         return ()->{

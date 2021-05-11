@@ -1,5 +1,5 @@
-FROM tomcat:latest
-LABEL maintainer="Pavan_Singh"
-ADD ./target/SPE_PROJECT-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
-EXPOSE 3000
-CMD ["catalina.sh", "run"]
+FROM openjdk:11
+VOLUME /tmp
+EXPOSE 8082
+ADD /target/SPE_BACKEND.jar SPE_BACKEND.jar
+ENTRYPOINT ["java", "-jar", "SPE_BACKEND.jar"]
