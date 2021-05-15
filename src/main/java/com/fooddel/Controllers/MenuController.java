@@ -8,11 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
 public class MenuController {
+
+    private static final Logger logger = LogManager.getLogger(MenuController .class);
     private MenuService menuService;
     @Autowired
     public MenuController(MenuService menuService) {

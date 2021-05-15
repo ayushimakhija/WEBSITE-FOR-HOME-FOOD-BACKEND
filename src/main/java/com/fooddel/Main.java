@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Main {
-    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+  //  private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     @Autowired
     private  CustomerRepository customerRepository;
@@ -24,7 +24,8 @@ public class Main {
     @Autowired
     private MenuRepository menuRepository;
     public static void main(String[] args) {
-        logger.info("just a test info log");
+       // logger.info("just a test info log");
+       // logger.info("just a codeinfo log");
         SpringApplication.run(Main.class, args);
 
     }

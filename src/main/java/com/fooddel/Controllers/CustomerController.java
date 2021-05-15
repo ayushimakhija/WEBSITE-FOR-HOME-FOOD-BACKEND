@@ -1,5 +1,6 @@
 package com.fooddel.Controllers;
 
+import com.fooddel.Main;
 import com.fooddel.Services.CustomerService;
 import com.fooddel.beans.Customer;
 import com.fooddel.exceptions.ResourceNotFoundException;
@@ -9,11 +10,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 @CrossOrigin(origins="*")
 @RestController
 @RequestMapping("api")
 public class CustomerController {
 
+    private static final Logger logger = LogManager.getLogger(CustomerController.class);
 
     private CustomerService customerService;
     @Autowired
@@ -23,13 +30,17 @@ public class CustomerController {
 
     @GetMapping("/getAllCustomers")
     public List<Customer> getAllCustomers() {
+        logger.info("getting all customers details");
         return customerService.getCustomers();
+
     }
 
 
 
     @PostMapping("/createCustomer")
     public Customer createCustomer( @RequestBody Customer customer){  //mapping the JSON Body tot he object directly
+
+        logger.info("customer created");
         return customerService.createCustomer(customer);
     }
 
@@ -49,13 +60,14 @@ public class CustomerController {
     public ResponseEntity<Customer> updateUser(
             @PathVariable(value = "id") Integer Id,  @RequestBody Customer customerDetails)
             throws ResourceNotFoundException {
-
+        logger.info("updating customer details");
         Customer updatedCustomer= customerService.updateCustomer(Id,customerDetails);
         return ResponseEntity.ok(updatedCustomer);
     }
 
     @PostMapping("/customer/login")
     public ResponseEntity<Customer> login(@RequestBody Customer customer){
+        logger.info("login successfull");
         String email = customer.getEmailId();
         String pass = customer.getPassword();
         System.out.println("email"+ email+" "+pass);

@@ -9,10 +9,14 @@ import com.fooddel.repository.OrdersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
 public class OrderItemsController {
+
+    private static final Logger logger = LogManager.getLogger(OrderItemsController.class);
     @Autowired
     private OrdersItemRepository orderitemsRepository;
 
