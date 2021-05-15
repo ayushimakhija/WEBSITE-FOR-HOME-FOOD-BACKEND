@@ -141,9 +141,9 @@ class SignUp extends Component {
                     </form>
                 </div>
             </div>
-                <div className="Cards">
-                <Cards/><br/>
-                </div>
+                {/*<div className="Cards">*/}
+                {/*<Cards/><br/>*/}
+                {/*</div>*/}
             </div>
         )
     }

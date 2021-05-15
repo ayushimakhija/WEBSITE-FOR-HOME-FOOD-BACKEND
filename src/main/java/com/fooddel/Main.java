@@ -5,6 +5,8 @@ import com.fooddel.beans.foodprovider;
 import com.fooddel.repository.CustomerRepository;
 import com.fooddel.repository.FoodProviderRepository;
 import com.fooddel.repository.MenuRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +15,8 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     @Autowired
     private  CustomerRepository customerRepository;
     @Autowired
@@ -20,6 +24,7 @@ public class Main {
     @Autowired
     private MenuRepository menuRepository;
     public static void main(String[] args) {
+        logger.info("just a test info log");
         SpringApplication.run(Main.class, args);
 
     }

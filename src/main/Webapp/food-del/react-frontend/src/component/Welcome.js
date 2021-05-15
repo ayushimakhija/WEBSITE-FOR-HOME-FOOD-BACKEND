@@ -21,11 +21,11 @@ class Welcome extends Component {
                         – Winona LaDuke</h5>
                 </div>
             <div className="Search">
-                <Cards/>
+                {/*<Cards/>*/}
                 <br/>
             </div>
 
-
+                {/*<Footer ></Footer>*/}
             </div>
         );
     }

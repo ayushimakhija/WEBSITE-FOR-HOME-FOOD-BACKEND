@@ -26,7 +26,7 @@ function RenderVendor(props)
 console.log({city});
   return(
       <div>
-        <h1>{city}</h1>
+        <h1>Location : {city}</h1>
 
         {props.vendors.length>0?props.vendors.map(vendor =>{return <Cards vendor={vendor}/>}):"Data Not Found"}
 
@@ -84,7 +84,7 @@ class App extends Component{
           </Router>
 
 
-<Footer />
+
         </div>
     )
   }
