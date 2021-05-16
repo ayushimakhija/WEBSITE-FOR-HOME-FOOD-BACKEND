@@ -1,0 +1,48 @@
+---
+- name: Pull and Run docker image of Package_Management
+  hosts: all
+  tasks:
+    - name: Pull mehakdogra0067/package_management
+      docker_image:
+        name: mehakdogra0067/package_management
+        source: pull
+
+
+    - name: Pull MySQl image
+      docker_image:
+        name: mysql:5.7
+        source: pull
+
+#    - name: Running MYSQL Database as Docker Container using Ansible.
+#      hosts: all
+#
+#      vars:
+#        db_volume: db_data
+#
+#      tasks:
+#        - name: Launch mysql database container
+#          docker_container:
+#            name: mysql-standalone-01
+#            image: mysql:5.7
+#            volumes:
+#              - "{{ db_volume }}:/var/lib/mysql"
+#            restart: true
+#            env:
+#              MYSQL_ROOT_PASSWORD: Shivraj@25
+#              MYSQL_DATABASE: bidding_app_db
+#              MYSQL_USER: Shivraj
+#              MYSQL_PASSWORD: Shivraj@25
+#            ports:
+#              - "3307:3306"
+#
+#    - name: Create a network
+#      docker_network:
+#        name: network_one
+#
+#    - name: Remove all but selected list of containers
+#      docker_network:
+#        name: network_one
+#        connected:
+#          - mysql-standalone-01
+#          - bidding_app_backend
+
