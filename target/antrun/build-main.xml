@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <copy todir="/home/ayushi/Downloads/SPE_FINAL_PROJECT-pavan/target/classes/public">
+      <fileset dir="/home/ayushi/Downloads/SPE_FINAL_PROJECT-pavan/src/main/Webapp/food-del/react-frontend/build" />
+    </copy>
+  </target>
+</project>
