@@ -1,10 +1,10 @@
 ---
-- name: Pull and Run docker image of Package_Management
+- name: Pull and Run docker image of spebackend
   hosts: all
   tasks:
-    - name: Pull mehakdogra0067/package_management
+    - name: Pull pavan996/spebackend
       docker_image:
-        name: mehakdogra0067/package_management
+        name: pavan996/spebackend
         source: pull
 
 
