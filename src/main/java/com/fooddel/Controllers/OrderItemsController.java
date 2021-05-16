@@ -1,14 +1,12 @@
 package com.fooddel.Controllers;
 
-import com.fooddel.Services.MenuService;
 import com.fooddel.Services.OrdersItemsService;
-import com.fooddel.beans.Menu;
 import com.fooddel.beans.Orderitems;
-import com.fooddel.repository.MenuRepository;
 import com.fooddel.repository.OrdersItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")

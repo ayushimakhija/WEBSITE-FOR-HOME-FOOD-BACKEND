@@ -3,10 +3,10 @@ import com.fooddel.beans.Menu;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class MenuService {
 
@@ -22,6 +22,14 @@ public class MenuService {
     {
         System.out.println(menu.toString());
         return menuRepository.save(menu);
+    }
+
+    public Menu getMenuById(Integer id){
+
+        Menu menu= menuRepository.findById(id).orElseThrow(()
+                -> new ResourceNotFoundException("menu does not exists with id:"+id));
+
+        return menu;  //entity is returned along with the status
     }
 
     public Menu updateMenu(Integer id, Menu menuDetails )

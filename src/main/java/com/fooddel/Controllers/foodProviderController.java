@@ -1,23 +1,19 @@
 package com.fooddel.Controllers;
 
-import com.fooddel.Services.CustomerService;
 import com.fooddel.Services.foodProviderService;
-import com.fooddel.beans.Customer;
 import com.fooddel.beans.Menu;
 import com.fooddel.beans.foodprovider;
-import com.fooddel.exceptions.ResourceNotFoundException;
-import com.fooddel.repository.CustomerRepository;
-import com.fooddel.repository.FoodProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
 public class foodProviderController {
-
     private foodProviderService foodproviderService;
     @Autowired
     public foodProviderController(foodProviderService foodproviderService) {
@@ -38,11 +34,25 @@ public class foodProviderController {
 
 
     @PostMapping("/foodprovider/location")
-    public List<foodprovider> getFoodProvidersByLocation(@RequestBody foodprovider fp) {
+    public List<List<String>> getFoodProvidersByLocation(@RequestBody foodprovider fp) {
         String location = fp.getLocation();
         List<foodprovider> list = foodproviderService.getFoodProvidersByLocation(location);
+        List<List<String>> list1 = new ArrayList<>();
+        for(foodprovider f : list){
+            List<String> list2 = new ArrayList<>();
+            list2.add(f.getCompanyName());
+            list2.add(f.getLocation());
+            list2.add(f.getContactNumber());
+            List<Menu> m = f.getDishLists();
+            for(Menu m2 : m){
+                String dish = Integer.toString(m2.getId());
+                list2.add(dish);
+
+            }
+            list1.add(list2);
+        }
         System.out.println(list);
-        return list;
+        return list1;
     }
 
     @PutMapping("updatefoodpovider/{id}")
@@ -63,7 +73,6 @@ public class foodProviderController {
 
         if(loggedIn.getEmailId().equals(email) && loggedIn.getPassword().equals(pass)){
             System.out.println("Password Matched");
-//               System.out.println("flag after:"+ check.isLog_status());
             return ResponseEntity.ok(loggedIn);
         }
 

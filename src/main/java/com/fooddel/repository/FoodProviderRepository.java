@@ -1,6 +1,5 @@
 package com.fooddel.repository;
 
-import com.fooddel.beans.Customer;
 import com.fooddel.beans.foodprovider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -3,11 +3,11 @@ import com.fooddel.beans.Customer;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class CustomerService {
 
@@ -42,12 +42,13 @@ public class CustomerService {
         Customer customer= customerRepository.findById(id).orElseThrow(()
                 -> new ResourceNotFoundException("Customer not exists with id:"+id));
 
-        customer.setFirstName(customerDetails.getFirstName());
-        customer.setLastName(customerDetails.getLastName());
-        customer.setContactNumber(customerDetails.getContactNumber());
-        customer.setEmailId(customerDetails.getEmailId());
-        customer.setPassword(customerDetails.getPassword());
-        customer.setAddress(customerDetails.getAddress());
+        customer.setFirstName(customer.getFirstName());
+        customer.setLastName(customer.getLastName());
+        customer.setContactNumber(customer.getContactNumber());
+        customer.setEmailId(customer.getEmailId());
+        customer.setPassword(customer.getPassword());
+        customer.setAddress(customer.getAddress());
+        customer.setSubscribe(customerDetails.isSubscribe());
 
 
         Customer updatedCustomer= customerRepository.save(customer);

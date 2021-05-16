@@ -1,15 +1,15 @@
 package com.fooddel.Services;
 
-import com.fooddel.beans.Customer;
+import com.fooddel.beans.Menu;
 import com.fooddel.beans.foodprovider;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import com.fooddel.repository.FoodProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class foodProviderService {
     private final FoodProviderRepository foodproviderRepository;
@@ -47,10 +47,6 @@ public class foodProviderService {
         fp.setEmailId(fp.getEmailId());
         fp.setLocation(fp.getLocation());
         fp.setPassword(fp.getPassword());
-        fp.setDishLists(fp.getDishLists());
-
-
-
         foodprovider updatedFoodProvider= foodproviderRepository.save(fp);
         return updatedFoodProvider;
     }
@@ -63,7 +59,15 @@ public class foodProviderService {
     public List<foodprovider> getFoodProvidersByLocation(String location){
 
         List<foodprovider> fp= foodproviderRepository.findByLocation(location);
+        System.out.println("Hello");
+        for(foodprovider f : fp){
+            System.out.println(f.getCompanyName());
+            List<Menu>  dish = f.getDishLists();
+            for(Menu m : dish){
+                System.out.println(m.getDishName());
+            }
 
+        }
         return fp;
     }
 

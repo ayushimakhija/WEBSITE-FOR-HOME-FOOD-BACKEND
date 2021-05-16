@@ -1,7 +1,5 @@
 package com.fooddel.beans;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +8,7 @@ import java.util.List;
 public class foodprovider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer Id;
+    private  Integer food_Id;
     @Column(nullable = false)
     private String emailId;
     @Column(nullable = false)

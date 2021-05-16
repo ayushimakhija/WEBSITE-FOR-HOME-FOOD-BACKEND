@@ -1,6 +1,7 @@
 package com.fooddel.beans;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name="Orderitems")
 public class Orderitems {

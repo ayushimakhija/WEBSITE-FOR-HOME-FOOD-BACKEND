@@ -4,11 +4,11 @@ import com.fooddel.Services.CustomerService;
 import com.fooddel.beans.Customer;
 import com.fooddel.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin(origins="*")
 @RestController
 @RequestMapping("api")
@@ -34,11 +34,11 @@ public class CustomerController {
     }
 
 
-    /*@GetMapping("getCustomerById/{id}")
+   /* @GetMapping("getCustomerById/{id}")
     public ResponseEntity<Customer> getCustomersById(@PathVariable(value = "id") Integer Id)
             throws ResourceNotFoundException {
         Customer customer =
-                customerRepository
+                customerService
                         .findById(Id)
                         .orElseThrow(() -> new ResourceNotFoundException("customer not found on :: " + Id));
         return ResponseEntity.ok().body(customer);

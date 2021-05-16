@@ -1,8 +1,5 @@
 package com.fooddel.beans;
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -29,8 +26,16 @@ public class Customer {
     //default constructor
     public Customer() {}
 
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
     public Customer(String firstName, String lastName, String contactNumber,
-                    String address, String emailId, String password,boolean subscribe ) {
+                    String address, String emailId, String password, boolean subscribe ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactNumber = contactNumber;

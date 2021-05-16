@@ -46,10 +46,13 @@ public class Main {
     InitializingBean sendDatabase(){
         return ()->{
             customerRepository.save(new Customer("ayushi","makhija","7869054251","narsinghpur","ayushi9ym.19@gmail.com","ayushi",false));
-            foodproviderRepository.save(new foodprovider("ayushi9yb.19@gmail.com","ayushi","bangalore","7869054251","ayushiCafe"));
-            foodproviderRepository.save(new foodprovider("chirag16@gmail.com","chirag","jabalpur","9875647839","chiragCafe"));
-            menuRepository.save(new Menu("pizza","my fav","chbhbd","230","Monday"));
-            menuRepository.save(new Menu("pasta","my fav","chbhbck","200","sunday"));
+            foodprovider f1   =  new foodprovider("ayushi9yb.19@gmail.com","ayushi","bangalore","7869054251","ayushiCafe");
+            foodproviderRepository.save(f1);
+            foodprovider f2 = new foodprovider("chirag16@gmail.com","chirag","bangalore","9875647839","chiragCafe");
+            foodproviderRepository.save(f2);
+            menuRepository.save(new Menu("pizza","my fav","chbhbd","230","Monday",f1));
+            menuRepository.save(new Menu("pasta","my fav","chbhbck","200","sunday",f1));
+
 
         };
     }
