@@ -55,6 +55,24 @@ public class MenuService {
 
         return menu;  //entity is returned along with the status
     }
+    
+    public List<List<String>> getListOfMenuOfParticularFoodProvider(Integer food_id)
+    {
+        List<List<String>> menu = new ArrayList<>();
+        for(Menu m :menuRepository.findAll()){
+            if(m.getDishId().getFood_Id() == food_id){
+                List<String> m2 = new ArrayList<>();
+                m2.add(m.getDishName());
+                m2.add(m.getDishDescription());
+                m2.add(m.getDishImage());
+                m2.add(m.getDishPrice());
+                m2.add(m.getDay());
+                System.out.println(m);
+                menu.add(m2);
+            }
+        }
+        return menu;
+    }
 
 
 
