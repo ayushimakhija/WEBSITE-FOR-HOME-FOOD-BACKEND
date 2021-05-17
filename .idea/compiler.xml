@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SPE_PROJECT" />
         <module name="SPE_FINAL-PROJECT" />
+        <module name="SPE_FINAL_PROJECT_NEW" />
+        <module name="SPE_PROJECT" />
         <module name="SPE_FINAL_PROJECT-pavan" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SPE_FINAL-PROJECT" options="-parameters" />
       <module name="SPE_FINAL_PROJECT-pavan" options="-parameters" />
+      <module name="SPE_FINAL_PROJECT_NEW" options="-parameters" />
       <module name="SPE_PROJECT" options="-parameters" />
     </option>
   </component>
