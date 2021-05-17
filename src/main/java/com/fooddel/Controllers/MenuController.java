@@ -37,11 +37,9 @@ public class MenuController {
         return menu;
     }*/
 
-    @GetMapping("/menu/{id}")
-    public Menu getMenuById(@PathVariable Integer id){
-        logger.info("Menu id");
-        Menu menu = menuService.getMenuById(id);
-        Menu menu1 = new Menu(menu.getId(),menu.getDishName(),menu.getDishDescription(),menu.getDishImage(),menu.getDishPrice(),menu.getDay());
+    @GetMapping("/menu/{f}")
+    public List<List<String>> getListOfMenuOfParticularFoodProvider(@PathVariable Integer f) {
+        List<List<String>> menu1 = menuService.getListOfMenuOfParticularFoodProvider(f);
         return menu1;
     }
 
