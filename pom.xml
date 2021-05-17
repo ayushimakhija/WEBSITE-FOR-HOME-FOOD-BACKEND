@@ -13,7 +13,7 @@
     <artifactId>SPE_PROJECT</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>SpringReactApplication</name>
     <description>Demo project for Spring Boot</description>
 
