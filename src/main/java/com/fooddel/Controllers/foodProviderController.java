@@ -49,6 +49,7 @@ public class foodProviderController {
         List<List<String>> list1 = new ArrayList<>();
         for(foodprovider f : list){
             List<String> list2 = new ArrayList<>();
+            list2.add(Integer.toString(f.getFood_Id());
             list2.add(f.getCompanyName());
             list2.add(f.getLocation());
             list2.add(f.getContactNumber());
