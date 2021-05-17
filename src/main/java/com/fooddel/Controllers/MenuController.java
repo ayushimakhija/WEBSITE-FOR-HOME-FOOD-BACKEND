@@ -8,10 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @CrossOrigin(origins= "*")
 @RestController
 @RequestMapping("api")
 public class MenuController {
+    private static final Logger logger = LogManager.getLogger(MenuController.class);
     private MenuService menuService;
     @Autowired
     public MenuController(MenuService menuService) {
@@ -22,6 +25,8 @@ public class MenuController {
     @PostMapping("/createMenu")
     public Menu createMenu(@RequestBody Menu menu)
     {
+        logger.info("Creating Menu");
+
         return menuService.createMenu(menu);
     }
 
@@ -34,6 +39,7 @@ public class MenuController {
 
     @GetMapping("/menu/{id}")
     public Menu getMenuById(@PathVariable Integer id){
+        logger.info("Menu id");
         Menu menu = menuService.getMenuById(id);
         Menu menu1 = new Menu(menu.getId(),menu.getDishName(),menu.getDishDescription(),menu.getDishImage(),menu.getDishPrice(),menu.getDay());
         return menu1;
@@ -41,6 +47,7 @@ public class MenuController {
 
     @PutMapping("updateMenu/{id}")
     public ResponseEntity<Menu> updateMenu(@PathVariable Integer id, @RequestBody Menu menu) {
+        logger.info("Menu Updated");
          menu= menuService.updateMenu(id, menu);
         return ResponseEntity.ok(menu);
     }
