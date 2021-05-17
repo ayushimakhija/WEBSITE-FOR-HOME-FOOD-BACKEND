@@ -40,6 +40,13 @@ public class foodprovider {
     }
 
     //getter and setter
+    public Integer getFood_Id() {
+        return food_Id;
+    }
+
+    public void setFood_Id(Integer food_Id) {
+        this.food_Id = food_Id;
+    }
 
 
     public String getContactNumber() {
