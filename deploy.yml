@@ -1,0 +1,15 @@
+
+---
+- name: Pull and Run docker image of spebackend
+  hosts: all
+  tasks:
+    - name: Pull pavan996/spebackend
+      docker_image:
+        name: pavan996/spebackend
+        source: pull
+
+
+    - name: Pull MySQl image
+      docker_image:
+        name: mysql:5.7
+        source: pull
