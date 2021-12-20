@@ -46,8 +46,8 @@ public class Main {
     InitializingBean sendDatabase(){
         return ()->{
 
-            customerRepository.save(new Customer("ayushi","makhija","7869054251","narsinghpur","ayushi9ym.19@gmail.com","ayushi",false));
-            customerRepository.save(new Customer("pavan","singh","8686886135","shamshabad","pavan@gmail.com","pavan",false));
+            customerRepository.save(new Customer("ayushi","makhija","8989898989","narsinghpur","ayushi9ym.20@gmail.com","ayushi",false));
+            customerRepository.save(new Customer("pavan","singh","5656565656","shamshabad","pavan12@gmail.com","pavan",false));
             customerRepository.save(new Customer("shabbir","sidhpurwala","1234567890","bangalore","shabbir@gmail.com","shabbir",true));
             customerRepository.save(new Customer("mehak","dogra","2345678901","bangalore","mehak@gmail.com","mehak",false));
             customerRepository.save(new Customer("divyansha","agarwal","3456789012","indore","divyansha@gmail.com","divyansha",false));
